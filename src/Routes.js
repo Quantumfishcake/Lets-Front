@@ -8,6 +8,10 @@ import App from './components/App'
 import Home from './components/Home'
 import NewGroup from './components/NewGroup'
 
+import Event from './components/Event'
+import Events from './components/Events'
+import Newevent from './components/Newevent'
+
 
 
 const Routes = (
@@ -15,10 +19,14 @@ const Routes = (
   <div>
 
     <Route exact path='/' component={ Home } />
+
     <Route exact path='/groups' component={ Groups } />
     <Route exact path='/newgroup' component={ NewGroup } />
     <Route exact path='/groups/:id' component={ Group } />
 
+    <Route exact path='/events' component={ Events } />
+    <Route exact path='/newevent' component={ Newevent } />
+    <Route exact path='/events/:id' component={ Event } />
 
 
 
