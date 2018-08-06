@@ -13,9 +13,11 @@ class Events extends Component {
     }
 
     const fetchEvents = () => {
-      axios.get(SERVER_URL+'events.json').then( (events) => {
+      axios.get(SERVER_URL+'events.json').then( events => {
 
-        this.state.events = events.data.events
+        this.setState({
+          events: events.data.events
+        })
 
       }).catch( (errors) => {
         console.log(errors);
@@ -32,17 +34,18 @@ class Events extends Component {
       <div>
         <h1>Events Page here</h1>
         <div>
-          {this.state.events.map( (event) => {
+          {this.state.events.map( event => {
           return (
-            <p>{event}</p>
-          // <div>
-          //     <p>event here</p>
-          //   <h3>
-          //     {event.name}
-          //   </h3>
-          //   <h4>Where : {event.location}</h4>
-          //   <p>Description : {event.description}</p>
-          // </div>
+
+          <div>
+            <h3>
+              {event.name}
+            </h3>
+            <h4>Where : {event.location}</h4>
+            <p>Description : {event.description}</p>
+            <p>event_id : {event.id}</p>
+            <p>More details : <Link to={{pathname: '/events/' + event.id}} >{event.name}</Link></p>
+          </div>
         )
         })  }
         </div>
