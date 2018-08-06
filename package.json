@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "axis": "^1.0.0",
+    "qs": "^6.5.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router": "^4.3.1",
