@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import Header from './Header'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 var _ = require('lodash');
+
 
 
 const GROUP_SERVER_URL = 'http://localhost:3000/groups/'
@@ -45,6 +47,7 @@ class Group extends Component {
   render() {
     return (
       <div >
+      <Header />
       <h1>Group single</h1>
       <Api id={this.props.match.params.id}/>
       </div>

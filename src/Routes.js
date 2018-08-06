@@ -14,6 +14,7 @@ import Newevent from './components/Newevent'
 
 
 
+
 const Routes = (
 <Router>
   <div>
@@ -23,6 +24,7 @@ const Routes = (
     <Route exact path='/groups' component={ Groups } />
     <Route exact path='/newgroup' component={ NewGroup } />
     <Route exact path='/groups/:id' component={ Group } />
+  
 
     <Route exact path='/events' component={ Events } />
     <Route exact path='/newevent' component={ Newevent } />

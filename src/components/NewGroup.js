@@ -43,8 +43,8 @@ class NewGroup extends Component {
     createNewGroup(group){
   console.log(this.state);
 
-console.log(axios.post(GROUPS_SERVER_URL, {name: 'tom', description: 'dsaasdasdas'}));
-  axios.post(GROUPS_SERVER_URL, {name: group.name, description: group.description}).then((results) => {
+
+  axios.post(GROUPS_SERVER_URL, {name: group.name, description: group.description, image: group.image, location: group.location, nickname: group.nickname}).then((results) => {
     console.log(results.data);
 // this.setState({reservedSeats: [results.data.seat, ...this.state.reservedSeats]})
 
