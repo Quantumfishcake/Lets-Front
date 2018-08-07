@@ -36,6 +36,12 @@ class Events extends Component {
         <Header />
         <h1>Events Page here</h1>
         <div>
+          <Link to={
+            {
+              pathname: '/newevent/',
+              state: {from: this.props.location}
+          }
+        }>Create a new Event</Link>
           {this.state.events.map( event => {
           return (
 
