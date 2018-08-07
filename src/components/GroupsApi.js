@@ -7,7 +7,7 @@ import _ from 'lodash'
 const GROUPS_SERVER_URL = 'http://localhost:3000/groups.json'
 
 class GroupsApi extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       groups: []
@@ -21,7 +21,6 @@ class GroupsApi extends Component {
     const fetchGroups = () => {
       console.log(filterWord)
       if (filterWord !== undefined) {
-        console.log('cat');
         axios.get(GROUPS_SERVER_URL).then((results) => {
           console.log(results.data)
           const data2 = _.filter(results.data.groups, data => _.some(data.interests, { name: filterWord }))
@@ -31,7 +30,6 @@ class GroupsApi extends Component {
         })
       } else {
         axios.get(GROUPS_SERVER_URL).then((results) => {
-
           console.log(results.data.groups)
           this.setState({ groups: results.data.groups })
           console.log(this.state)
@@ -41,16 +39,12 @@ class GroupsApi extends Component {
     fetchGroups()
   }
 
-  render() {
+  render () {
     const { groups } = this.state
     console.log(groups)
     return (
       <div >
-
         {groups && groups.map((x) => <p><Link to={`/groups/${x.id}`} key={x.id}>{x.name}</Link></p>)}
-
-
-
       </div>
     )
   }

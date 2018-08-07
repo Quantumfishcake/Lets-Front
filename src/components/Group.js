@@ -3,8 +3,8 @@ import Header from './Header'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-
 const GROUP_SERVER_URL = 'http://localhost:3000/groups/'
+const ROLES_SERVER_URL = 'http://localhost:3000/roles.json'
 
 class Api extends Component {
   constructor (props) {
@@ -12,7 +12,9 @@ class Api extends Component {
     this.state = {
       group: [],
       events: [],
-      interests: []
+      interests: [],
+      user_id: '',
+      group_id: '',
     }
 
     const fetchGroup = () => {
@@ -27,13 +29,32 @@ class Api extends Component {
     fetchGroup()
   }
 
+  // _join = (event) => {
+  //   event.preventDefault()
+  //   this.addUserToGroup(this.state)
+  //   this.setState({ user_id: '', group_id: ''})
+  // }
+
+  // addUserToGroup(group) {
+  //   console.log(this.state)
+  //   axios.post(ROLES_SERVER_URL, { user_id: '', group_id: '', admin: false }).then((results) => {
+  //     console.log(results.data)
+  //   }).catch(function (error) {
+  //     console.log(error.response)
+  //   })
+  // }
+
+
+
+
+
   render () {
-    const { group } = this.state.group
     return (
       <div >
         <h2>{this.state.group.name}</h2>
+        {/* <button onClick={this._join}>Join</button> */}
         <p>{this.state.group.description}</p>
-        <img src={this.state.group.image} alt="Logo" />
+        <img src={this.state.group.image} alt='Logo' />
         <h4>Location: {this.state.group.location}</h4>
         <h4>{this.state.group.nickname}</h4>
         <h4>Events: {this.state.events.map((x) => <Link to={`/events/${x.id}`}>{x.name}</Link>)}</h4>
