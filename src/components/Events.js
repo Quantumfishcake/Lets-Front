@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
 
 class Events extends Component {
-  render() {
+  render () {
     return (
-      <div>
-
-      </div>
+      <div />
     )
   }
 }
 
-
-
-export default Events;
+export default Events

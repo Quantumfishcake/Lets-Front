@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
 
 class Newevent extends Component {
-  render() {
+  render () {
     return (
-      <div>
-
-      </div>
+      <div />
     )
   }
 }
 
-
-
-export default Newevent;
+export default Newevent
