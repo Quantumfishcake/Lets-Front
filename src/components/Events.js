@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Header from './Header'
 import { Link } from 'react-router-dom';
 
 const SERVER_URL = "http://localhost:3000/"
@@ -32,6 +33,7 @@ class Events extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h1>Events Page here</h1>
         <div>
           <Link to={
@@ -44,6 +46,7 @@ class Events extends Component {
           return (
 
           <div>
+            
             <h3>
               {event.name}
             </h3>

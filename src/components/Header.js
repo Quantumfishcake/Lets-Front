@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
+import Nav from './Navigation'
 
 class Header extends Component {
-  render() {
+  render () {
     return (
       <div>
-        <h1 className ='logo'> LETS </h1>
+        <h1 className='logo'> LETS </h1>
+        <Nav />
       </div>
     )
   }
 }
 
-
-
-export default Header;
+export default Header

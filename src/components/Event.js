@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Header from './Header'
 import { Link } from 'react-router-dom';
 
 
@@ -42,6 +43,7 @@ class Event extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h2>{this.state.event.name}</h2>
         <p>on {this.state.event.date} at {this.state.event.time}</p>
         <h4>Venue : {this.state.event.location}</h4>
@@ -49,12 +51,10 @@ class Event extends Component {
         <hr></hr>
 
         <p>Info : {this.state.event.description}</p>
-
+        
       </div>
     )
   }
 }
 
-
-
-export default Event;
+export default Event

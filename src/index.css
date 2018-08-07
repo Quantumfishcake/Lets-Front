@@ -3,3 +3,20 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.blackButton{
+  background-color: red;
+}
+
+.whiteButton{
+  background-color: green;
+}
+
+.nav {
+  background-color: yellow;
+}
+
+.navlink a {
+  color: black;
+  display: inline;
+}

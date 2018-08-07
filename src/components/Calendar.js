@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
 
 class Calendar extends Component {
-  render() {
+  render () {
     return (
-      <div>
-        
-      </div>
+      <div />
     )
   }
 }
 
-
-
-export default Calendar;
+export default Calendar
