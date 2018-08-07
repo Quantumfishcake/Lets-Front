@@ -10,6 +10,8 @@ class Header extends Component {
           <Link to={`/`}>Home</Link>
           <Link to={`/groups`}>Groups</Link>
           <Link to={`/events`}>Events</Link>
+          <Link to={`/newgroup`}>New Group</Link>
+          <Link to={`/newevent`}>New Event</Link>
           </div>
       </div>
     )

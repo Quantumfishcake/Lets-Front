@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import _ from 'lodash'
+
 
 const GROUP_SERVER_URL = 'http://localhost:3000/groups/'
 
@@ -16,18 +16,12 @@ class Api extends Component {
     }
 
     const fetchGroup = () => {
-      console.log(GROUP_SERVER_URL + this.props.id + '.json')
       axios.get(GROUP_SERVER_URL + this.props.id + '.json').then((results) => {
-        console.log(results.data)
-        console.log(results.data.events)
         this.setState({
           group: results.data,
           events: results.data.events,
           interests: results.data.interests
         })
-        console.log(results.data)
-        console.log(results.data.events)
-        console.log(this.state)
       })
     }
     fetchGroup()
@@ -44,6 +38,8 @@ class Api extends Component {
         <h4>{this.state.group.nickname}</h4>
         <h4>Events: {this.state.events.map((x) => <Link to={`/events/${x.id}`}>{x.name}</Link>)}</h4>
         <h4>Interests: {this.state.interests.map((x) => <li><Link to={{pathname: '/groups', search: `?filterBy=${x.name}`}}>{x.name}</Link></li>)}</h4>
+        <Link to={`/groups/${this.props.id}/edit`}>Edit</Link>
+    
       </div>
     )
   }

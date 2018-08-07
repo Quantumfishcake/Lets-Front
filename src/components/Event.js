@@ -50,7 +50,7 @@ class Event extends Component {
         <hr></hr>
 
         <p>Info : {this.state.event.description}</p>
-
+        
       </div>
     )
   }
