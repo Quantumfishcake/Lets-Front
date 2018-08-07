@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const SERVER_URL = "http://localhost:3000/"
 
 
+
 class Event extends Component {
   constructor(props) {
     super(props)
