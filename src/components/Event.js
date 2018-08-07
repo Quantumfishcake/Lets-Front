@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-import React, { Component } from 'react'
-
-class Event extends Component {
-  render () {
-    return (
-      <div />
-=======
 import React, { Component } from 'react';
 import axios from 'axios';
+import Header from './Header'
 import { Link } from 'react-router-dom';
 
 
@@ -49,6 +42,7 @@ class Event extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h2>{this.state.event.name}</h2>
         <p>on {this.state.event.date} at {this.state.event.time}</p>
         <h4>Venue : {this.state.event.location}</h4>
@@ -58,7 +52,6 @@ class Event extends Component {
         <p>Info : {this.state.event.description}</p>
 
       </div>
->>>>>>> 3baffc628ed3de17aadf924db651c8adaac752b7
     )
   }
 }

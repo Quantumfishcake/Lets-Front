@@ -7,6 +7,7 @@ class Header extends Component {
       <div>
         <h1 className='logo'> LETS </h1>
         <div>
+          <Link to={`/`}>Home</Link>
           <Link to={`/groups`}>Groups</Link>
           <Link to={`/events`}>Events</Link>
           </div>

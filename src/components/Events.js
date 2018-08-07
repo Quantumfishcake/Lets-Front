@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-import React, { Component } from 'react'
-
-class Events extends Component {
-  render () {
-    return (
-      <div />
-=======
 import React, { Component } from 'react';
 import axios from 'axios';
+import Header from './Header'
 import { Link } from 'react-router-dom';
 
 const SERVER_URL = "http://localhost:3000/"
@@ -40,12 +33,14 @@ class Events extends Component {
   render() {
     return (
       <div>
+        <Header />
         <h1>Events Page here</h1>
         <div>
           {this.state.events.map( event => {
           return (
 
           <div>
+            
             <h3>
               {event.name}
             </h3>
@@ -58,14 +53,9 @@ class Events extends Component {
         })  }
         </div>
       </div>
->>>>>>> 3baffc628ed3de17aadf924db651c8adaac752b7
     )
   }
 }
 
-<<<<<<< HEAD
-export default Events
-=======
 
 export default Events;
->>>>>>> 3baffc628ed3de17aadf924db651c8adaac752b7
