@@ -39,6 +39,7 @@ class Api extends Component {
         <h4>Events: {this.state.events.map((x) => <Link to={`/events/${x.id}`}>{x.name}</Link>)}</h4>
         <h4>Interests: {this.state.interests.map((x) => <li><Link to={{pathname: '/groups', search: `?filterBy=${x.name}`}}>{x.name}</Link></li>)}</h4>
         <Link to={`/groups/${this.props.id}/edit`}>Edit</Link>
+        <Link to={{pathname: '/newevent', state: {group_id: this.state.group.id}}}>New Event</Link>
     
       </div>
     )

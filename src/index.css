@@ -11,3 +11,12 @@ body {
 .whiteButton{
   background-color: green;
 }
+
+.nav {
+  background-color: yellow;
+}
+
+.navlink a {
+  color: black;
+  display: inline;
+}
