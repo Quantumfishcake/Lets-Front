@@ -1,10 +1,8 @@
-
 import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Interests from './Interests'
 import Loginpic from './Loginpic'
-import Groups from './Groups'
 
 
 class Home extends Component {

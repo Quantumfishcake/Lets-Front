@@ -13,7 +13,6 @@ class Nav extends Component {
           <Link to={`/groups`} className='navlink'>Groups</Link>
           <Link to={`/events`} className='navlink'>Events</Link>
           <Link to={`/newgroup`} className='navlink'>New Group</Link>
-          <Link to={`/newevent`} className='navlink'>New Event</Link>
         </ul>
       </div>
     )
