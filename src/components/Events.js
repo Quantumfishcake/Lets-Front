@@ -47,6 +47,8 @@ class Events extends Component {
       })
     })
   }
+}
+}
   render() {
     const { location } = this.props
     const { events } = this.state
