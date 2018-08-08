@@ -21,11 +21,19 @@ class User extends Component {
 
   fetch_user();
 }
+
+  saveUser(s) {
+
+    axios.post(USER_SERVER_URL, {content:s}).then((results)=> {
+      this.setState({user: [results.data, ...this.state.user]});
+    });
+
+  }
   render( ) {
 
       return(
       <div className="user">
-        <h1>{this.props.match.params.user}</h1>
+        <h1>{this.props.user.map}</h1>
       </div>
     );
   }
