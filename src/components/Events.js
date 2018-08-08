@@ -91,8 +91,9 @@ class Events extends Component {
         </div>
       </div>
     )
+    }
   }
-
+}
 }
 
  export default Events;
