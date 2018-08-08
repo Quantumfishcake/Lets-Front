@@ -11,6 +11,8 @@ import Event from './components/Event'
 import Events from './components/Events'
 import Newevent from './components/Newevent'
 
+import User from './components/User'
+import Login from './components/Login'
 
 const Routes = (
   <Router>
@@ -22,12 +24,15 @@ const Routes = (
       <Route exact path='/newgroup' component={NewGroup} />
       <Route exact path='/groups/:id' component={Group} />
       <Route exact path='/groups/:id/edit' component={EditGroup} />
-      
+
 
       <Route exact path='/events' component={Events} />
       <Route exact path='/newevent' component={Newevent} />
       <Route exact path='/events/:id' component={Event} />
 
+
+      <Route exact path='/user/:id' component={User} />
+      <Route exact path='/login' component={Login}/>
     </div>
   </Router>
 )
