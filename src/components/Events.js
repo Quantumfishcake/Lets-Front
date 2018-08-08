@@ -34,26 +34,25 @@ class Events extends Component {
     return (
       <div>
         <Header />
-        <h1>Events Page here</h1>
+        <h1 className="nextevent">Upcoming Events</h1>
         <div>
+          <div className="create">
           <Link to={
             {
               pathname: '/newevent/',
               state: {from: this.props.location}
           }
-        }>Create a new Event</Link>
+        }>Create a new Event</Link> </div>
           {this.state.events.map( event => {
           return (
 
-          <div>
-            
-            <h3>
-              {event.name}
+          <div className="container">
+
+            <h3 className="eventtitle">
+              <Link to={{pathname: '/events/' + event.id}} >{event.name}</Link>
             </h3>
-            <h4>Where : {event.location}</h4>
-            <p>Description : {event.description}</p>
-            <p>event_id : {event.id}</p>
-            <p>More details : <Link to={{pathname: '/events/' + event.id}} >{event.name}</Link></p>
+                <p>{event.description}</p>
+
           </div>
         )
         })  }

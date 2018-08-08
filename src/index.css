@@ -28,7 +28,7 @@ body {
   padding-bottom: 0;
   margin-bottom: 0;
   padding-top: 15vh;
-  
+
 }
 
 .secondimgtext{
@@ -42,13 +42,13 @@ body {
 	background-color: white;
 	height: 50px;
 	border-bottom: 1px solid #008596;
-  
+
   /*blocks are aligned using flex*/
 	display: flex;
 	justify-content: center;
-  align-items: center;  
-  
-  
+  align-items: center;
+
+
 }
 
 .navlink{
@@ -57,8 +57,8 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	color: #00bcd4;
 	font-size: 18px;
-  text-decoration: none; 
-  
+  text-decoration: none;
+
 }
 .navlink:hover {
   margin-bottom: 17px;
@@ -73,7 +73,7 @@ body {
 
 .navbar {
   background-color: blue;
- 
+
 }
 
 .interestscontainer{
@@ -99,7 +99,7 @@ body {
   background-image: url('http://cdn.axar.az/2017/06/03/yoga.jpg');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .sports{
   height: 150px;
@@ -107,7 +107,7 @@ body {
   background-image: url('https://vignette.wikia.nocookie.net/phobia/images/a/ab/Sports2.jpg/revision/latest?cb=20171106083857');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
   text-decoration: none;
 }
 .outdoors{
@@ -116,7 +116,7 @@ body {
   background-image: url('https://www.ashevillechamber.org/wp-content/uploads/2017/11/Play-Outdoors-Marquee.jpg');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .Tech{
   height: 150px;
@@ -124,7 +124,7 @@ body {
   background-image: url('https://www.visioncritical.com/wp-content/uploads/2015/12/tech-companies-resources-950x700.jpg');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .crosssing{
   height: 150px;
@@ -132,7 +132,7 @@ body {
   background-image: url('https://smhttp-ssl-71052.nexcesscdn.net/media/wysiwyg/learning-center/Crossdressing-Rights.jpg');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .Food{
   height: 150px;
@@ -140,7 +140,7 @@ body {
   background-image: url('http://cheersbar.com.au/wp-content/uploads/2016/01/CheersBar-Food-76.jpg');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .Family{
   height: 150px;
@@ -148,7 +148,7 @@ body {
   background-image: url('http://vanierinstitute.ca/wp-content/uploads/2016/05/Diversity-diversit%C3%A9.jpg');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .Learning{
   height: 150px;
@@ -156,7 +156,7 @@ body {
   background-image: url('http://digitalassess.com/wp-content/uploads/2017/01/machine-learning-1.png');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .Health{
   height: 150px;
@@ -164,7 +164,7 @@ body {
   background-image: url('https://i2.wp.com/news.harvard.edu/wp-content/uploads/2018/04/healthy-habits.jpg?resize=1200%2C800&ssl=1');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .Photography{
   height: 150px;
@@ -172,7 +172,7 @@ body {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkeP_F1zRZZifmLfttZmTwyK7R6roEESyKRioPj6bgHY9-ZKUd');
   background-size: 250px 150px;
   border-radius: 10px;
-  
+
 }
 .Music{
   height: 150px;
@@ -199,7 +199,7 @@ body {
 .groupsdiv{
 
   width: 100%;
-  border: solid black 1px;
+  /* border: solid black 1px; */
   border-radius: 5px;
   margin: 0 auto;
 
@@ -228,12 +228,12 @@ body {
   width: 80vw;
   margin: 50px auto;
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
   ' image name'
   'image nickname'
   ' image location'
   ' image description'
-  
+
   'events events '
   'interests interests';
 }
@@ -262,7 +262,7 @@ body {
 }
 .groupinterests{
   grid-area: interests;
-  
+
   list-style-type: none;
     margin: 0;
     padding: 0;
@@ -286,4 +286,24 @@ body {
   text-align: center;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
+}
+
+.create a {
+  text-decoration: none;
+  font-size: 15px;
+
+}
+
+.nextevent {
+  font-size: 22px;
+  float:right;
+}
+
+.eventtitle a{
+  text-decoration: none;
+}
+
+.container {
+  max-width: 700px;
+  margin-left: 50px;
 }
