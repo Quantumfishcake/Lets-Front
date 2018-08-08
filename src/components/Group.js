@@ -57,9 +57,9 @@ class Api extends Component {
           <p className='groupdescription'>{this.state.group.description}</p>
           <img src={this.state.group.image} alt='Logo' className='groupimage'/>
           <h4 className='grouplocation'>Location: {this.state.group.location}</h4>
-          <h4 className='groupnickname'>{this.state.group.nickname}</h4>
+          <h4 className='groupnickname'>For: {this.state.group.nickname}'s</h4>
           <h4 className='groupevents'>Upcoming Events: {this.state.events.map((x) => <div className='groupeventindividual'><Link to={`/events/${x.id}`}>{x.name}</Link><p>{x.date}{x.time}</p><p>{x.location}</p><p>{x.description}</p></div>)}</h4>
-          <h4 className='groupinterests'>Categories: {this.state.interests.map((x) => <li><Link to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}>{x.name}</Link></li>)}</h4>
+          <h4 className='groupinterests'> {this.state.interests.map((x) => <li><Link to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}>{x.name}</Link></li>)}</h4>
           <Link to={`/groups/${this.props.id}/edit`}>Edit</Link>
           <Link to={{ pathname: '/newevent', state: { group_id: this.state.group.id } }}>New Event</Link>
         </div>

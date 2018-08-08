@@ -229,24 +229,32 @@ body {
   margin: 50px auto;
   display: grid;
   grid-template-areas: 
-  'image image name'
-  'image image location'
-  'image image description'
-  'events events events'
-  'interests interests interests';
+  ' image name'
+  'image nickname'
+  ' image location'
+  ' image description'
+  
+  'events events '
+  'interests interests';
 }
 
 .groupname{
+  color:#00bcd4;
+  font-size: 2em;
   grid-area: name;
+  margin-left: 10px;
 }
 .groupimage{
+  max-width: 50vw;
   grid-area: image;
 }
 .grouplocation{
   grid-area: location;
+  margin-left: 10px;
 }
 .groupdescription{
   grid-area: description;
+  margin-left: 10px;
 }
 .groupevents{
   grid-area: events;
@@ -254,11 +262,28 @@ body {
 }
 .groupinterests{
   grid-area: interests;
+  
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   border: solid black 1px;
 }
 .groupnickname{
- 
+ grid-area: nickname;
+ margin-left: 10px;
 }
 .groupeventindividual{
   border: solid black 1px;
+}
+
+.groupinterests li {
+  float: left;
+}
+
+.groupinterests li a {
+  display: block;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
 }
