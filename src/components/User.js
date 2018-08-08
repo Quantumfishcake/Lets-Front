@@ -6,34 +6,38 @@ const USER_SERVER_URL = 'http://localhost:3000/users/'
 class User extends Component {
   constructor(props){
     super(props);
-    this.state = {  };
+    this.state = {
+      name: [],
+      location: [],
+      bio: [],
+
+
+     }
 
     const fetch_user = () => {
       let url = USER_SERVER_URL + this.props.match.params.id + '.json';
       axios.get(url).then( (result) => {
-        console.log(
-          result.data
-        );
-    }).catch( (errors) => {
-      console.log(errors);
-    })
-  };
+
+ this.setState({
+          name: result.data.user.name,
+          location: result.data.user.location,
+          bio: result.data.user.bio
+        })
+      }).catch((errors)=> {
+        console.log(errors);
+      })
+    }
 
   fetch_user();
 }
 
-  saveUser(s) {
-
-    axios.post(USER_SERVER_URL, {content:s}).then((results)=> {
-      this.setState({user: [results.data, ...this.state.user]});
-    });
-
-  }
-  render( ) {
-
+  render() {
+    const { user } = this.state
       return(
-      <div className="user">
-        <h1>{this.props.user.map}</h1>
+      <div>
+        <h1>Welcome {this.state.name}</h1>
+        <p>{this.state.location}</p>
+        <p>{this.state.bio}</p>
       </div>
     );
   }

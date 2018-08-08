@@ -12,6 +12,7 @@ import Events from './components/Events'
 import Newevent from './components/Newevent'
 
 import User from './components/User'
+import Login from './components/Login'
 
 const Routes = (
   <Router>
@@ -31,7 +32,7 @@ const Routes = (
 
 
       <Route exact path='/user/:id' component={User} />
-
+      <Route exact path='/login' component={Login}/>
     </div>
   </Router>
 )
