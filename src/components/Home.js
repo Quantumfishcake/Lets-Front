@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import Interests from './Interests.js'
+import Interests from './Interests'
 import Loginpic from './Loginpic'
 import Calendar2 from './Calendar2'
+
 
 class Home extends Component {
   render () {
