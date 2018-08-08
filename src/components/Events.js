@@ -24,7 +24,7 @@ class Events extends Component {
     const { location } = this.props
     const { events } = this.state
     const date = url.parse(location.search, true).query.filterBy
-    const eventsFiltered = location.search == '' ? events : _.filter(events, { date })
+    const eventsFiltered = location.search == '' ? _.sortBy(events, ['date']) : _.filter(events, { date })
 
     console.log(location)
 

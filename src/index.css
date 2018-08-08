@@ -336,3 +336,10 @@ body {
  .react-calendar {
  position:absolute;
  }
+
+
+ .react-calendar{
+   position: fixed;
+   top: 200px;
+   left: 100px;
+ }
