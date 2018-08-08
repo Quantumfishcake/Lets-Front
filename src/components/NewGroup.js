@@ -3,7 +3,7 @@ import axios from 'axios'
 import Header from './Header'
 import { Redirect } from 'react-router'
 
-const GROUPS_SERVER_URL = 'http://localhost:3000/groups.json'
+const GROUPS_SERVER_URL = 'https://backend-lets.herokuapp.com/groups.json'
 
 class NewGroup extends Component {
   constructor() {

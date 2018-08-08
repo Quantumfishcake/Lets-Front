@@ -7,8 +7,10 @@ class Groups extends Component {
     return (
       <div >
         <Header />
-        <h1>Groups</h1>
-        <GroupsApi search={this.props.location.search} />
+        
+          <h1>Groups</h1>
+          <GroupsApi search={this.props.location.search} />
+        
       </div>
     )
   }

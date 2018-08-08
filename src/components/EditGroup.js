@@ -4,8 +4,8 @@ import Header from './Header'
 import { Redirect } from 'react-router'
 import _ from 'lodash'
 
-const GROUP_SERVER_URL = 'http://localhost:3000/groups/'
-const INTEREST_SERVER_URL = 'http://localhost:3000/interests.json'
+const GROUP_SERVER_URL = 'https://backend-lets.herokuapp.com/groups/'
+const INTEREST_SERVER_URL = 'https://backend-lets.herokuapp.com/interests.json'
 
 class EditGroup extends Component {
     constructor(props) {

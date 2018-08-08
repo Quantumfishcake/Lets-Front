@@ -4,7 +4,7 @@ import Header from './Header'
 import { Link } from 'react-router-dom';
 
 
-const SERVER_URL = "http://localhost:3000/"
+const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
 
 
