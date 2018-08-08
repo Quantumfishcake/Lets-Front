@@ -4,6 +4,7 @@ import Header from './Header'
 import { Link } from 'react-router-dom';
 import url from 'url'
 import _ from 'lodash'
+import Calendar2 from './Calendar2'
 
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
@@ -52,61 +53,42 @@ class Events extends Component {
     fetchEvents();
   }
 
-
-
   render() {
-    return (
-      <div>
-        <Header />
-        <h1 className="nextevent">Upcoming Events</h1>
-        <div>
-          <div className="create">
-          <Link to={
-            {
-              pathname: '/newevent/',
+   return (
+     <div className="maincontainer">
+       <div className="container">
+         <div className="col-sm-12">
+       <Header />
+       <div className="col-sm-4 sidebar">
+       <Calendar2 />
 
-              state: {from: this.props.location}
-          }
-        }>Create a new Event</Link> </div>
-          {this.state.events.map( event => {
-          return (
+         <div className="col-sm-8 page-content">
+         <Link to={
+           {
+             pathname: '/newevent/',
+             state: { from: this.props.location }
+           }
+         }>Create a new Event</Link>
+         {this.state.events.map(event => {
+           return (
+             <div className="eventtitle">
+               <h3>
+                 {event.name}
+               </h3>
+               <h4>Where : {event.location}</h4>
+               <p>Description : {event.description}</p>
+               <p>date: {event.date}</p>
+             </div>
 
-          <div className="container">
-
-            <h3 className="eventtitle">
-              <Link to={{pathname: '/events/' + event.id}} >{event.name}</Link>
-            </h3>
-                <p>{event.description}</p>
-
-          </div>
-        )
-        })  }
-
-              state: { from: this.props.location }
-            }
-          }>Create a new Event</Link>
-          {this.state.events.map(event => {
-            return (
-
-              <div>
-
-                <h3>
-                  {event.name}
-                </h3>
-                <h4>Where : {event.location}</h4>
-                <p>Description : {event.description}</p>
-                <p>event_id : {event.id}</p>
-                <p>date: {event.date}</p>
-                <p>More details : <Link to={{ pathname: '/events/' + event.id }} >{event.name}</Link></p>
-              </div>
-            )
-          })}
-
-        </div>
-
-    )
-  }
+           )
+         })}
+         </div>
+       </div>
+       </div>
+     </div>
+   </div>
+   )
+ }
 }
 
-
-export default Events;
+ export default Events;
