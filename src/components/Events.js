@@ -15,6 +15,7 @@ class Events extends Component {
     this.state = {
       events: []
     }
+
     console.log(this.props)
     const searchfield = url.parse(this.props.location.search, true).query
     console.log(searchfield)
@@ -39,55 +40,59 @@ class Events extends Component {
         })
       }
       else {
-        axios.get(SERVER_URL + 'events.json').then(events => {
 
-          this.setState({
-            events: events.data.events
-          })
+    axios.get(SERVER_URL + 'events.json').then(events => {
+      this.setState({
+        events: events.data.events
+      })
+    })
+  }
+  render() {
+    const { location } = this.props
+    const { events } = this.state
+    const date = url.parse(location.search, true).query.filterBy
+    const eventsFiltered = location.search == '' ? events : _.filter(events, { date })
 
-        }).catch((errors) => {
-          console.log(errors);
-        })
-      }
-    }
-    fetchEvents();
+    console.log(location)
+
+    return (
+      <div className='maincontainer'>
+        <div className='container'>
+          <div className='col-sm-12'>
+            <Header />
+            <div className='col-sm-4 sidebar'>
+              <Calendar2 date={date} />
+              <div className='col-sm-8 page-content'>
+                <Link to={
+                  {
+                    pathname: '/newevent/',
+                    state: { from: this.props.location }
+                  }
+                }>Create a new Event</Link>
+
+                {eventsFiltered.map(event => {
+
+                  return (
+                    <div className='eventtitle'>
+                      <h3>
+                        {event.name}
+                      </h3>
+                      <h4>Where : {event.location}</h4>
+                      <p>Description : {event.description}</p>
+                      <p>event_id : {event.id}</p>
+                      <p>date: {event.date}</p>
+                      <p>More details : <Link to={{ pathname: '/events/' + event.id }} >{event.name}</Link></p>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
-  render() {
-   return (
-     <div className="maincontainer">
-       <div className="container">
-         <div className="col-sm-12">
-           <Header />
-           <div className="col-sm-4 sidebar">
-           <Calendar2 />
-           <div className="col-sm-8 page-content">
-           <Link to={
-             {
-               pathname: '/newevent/',
-                 state: { from: this.props.location }
-             }
-           }>Create a new Event</Link>
-           {this.state.events.map(event => {
-             return (
-               <div className="eventtitle">
-                 <h3>
-                   {event.name}
-                 </h3>
-                 <h4>Where : {event.location}</h4>
-                 <p>Description : {event.description}</p>
-                 <p>date: {event.date}</p>
-               </div>
-
-             )
-           })}
-           </div>
-         </div>
-         </div>
-       </div>
-     </div>
-     )
-   }
 }
 
  export default Events;
