@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Comfortaa', cursive;
 }
 
 .blackButton{
@@ -11,12 +13,337 @@ body {
 .whiteButton{
   background-color: green;
 }
+.logo {
+  float: left;
+}
+.Loginpic{
+  width: 100vw;
+  height: 25vw;
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+.mainimgtext{
+  font-size: 6em;
+  color: white;
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-top: 15vh;
 
-.nav {
-  background-color: yellow;
 }
 
-.navlink a {
+.secondimgtext{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
+
+
+.navlist {
+	background-color: white;
+	height: 50px;
+	border-bottom: 1px solid #008596;
+
+  /*blocks are aligned using flex*/
+	display: flex;
+	justify-content: center;
+  align-items: center;
+
+
+}
+
+.navlink{
+  margin: 20px 15px;
+  /*Montserrat font by googlefonts*/
+	font-family: 'Montserrat', sans-serif;
+	color: #00bcd4;
+	font-size: 18px;
+  text-decoration: none;
+
+}
+.navlink:hover {
+  margin-bottom: 17px;
+	border-bottom: 3px solid #00bcd4;
+  /*CCS3 element for hover effect*/
+	-webkit-transition: all .15s ease-in-out;
+  -moz-transition: all .15s ease-in-out;
+  -ms-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.navbar {
+  background-color: blue;
+
+}
+
+.interestscontainer{
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.categorycontainer{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.category{
+  border: solid black 2px;
+}
+.card {
+  margin: 5px;
+}
+
+.Yoga{
+  height: 150px;
+  width: 250px;
+  background-image: url('http://cdn.axar.az/2017/06/03/yoga.jpg');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.sports{
+  height: 150px;
+  width: 250px;
+  background-image: url('https://vignette.wikia.nocookie.net/phobia/images/a/ab/Sports2.jpg/revision/latest?cb=20171106083857');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+  text-decoration: none;
+}
+.outdoors{
+  height: 150px;
+  width: 250px;
+  background-image: url('https://www.ashevillechamber.org/wp-content/uploads/2017/11/Play-Outdoors-Marquee.jpg');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.Tech{
+  height: 150px;
+  width: 250px;
+  background-image: url('https://www.visioncritical.com/wp-content/uploads/2015/12/tech-companies-resources-950x700.jpg');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.crosssing{
+  height: 150px;
+  width: 250px;
+  background-image: url('https://smhttp-ssl-71052.nexcesscdn.net/media/wysiwyg/learning-center/Crossdressing-Rights.jpg');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.Food{
+  height: 150px;
+  width: 250px;
+  background-image: url('http://cheersbar.com.au/wp-content/uploads/2016/01/CheersBar-Food-76.jpg');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.Family{
+  height: 150px;
+  width: 250px;
+  background-image: url('http://vanierinstitute.ca/wp-content/uploads/2016/05/Diversity-diversit%C3%A9.jpg');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.Learning{
+  height: 150px;
+  width: 250px;
+  background-image: url('http://digitalassess.com/wp-content/uploads/2017/01/machine-learning-1.png');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.Health{
+  height: 150px;
+  width: 250px;
+  background-image: url('https://i2.wp.com/news.harvard.edu/wp-content/uploads/2018/04/healthy-habits.jpg?resize=1200%2C800&ssl=1');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.Photography{
+  height: 150px;
+  width: 250px;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkeP_F1zRZZifmLfttZmTwyK7R6roEESyKRioPj6bgHY9-ZKUd');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.Music{
+  height: 150px;
+  width: 250px;
+  background-image: url('https://www.apple.com/v/music/g/images/shared/og_image_family.png?201806181830');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+.Language{
+  height: 150px;
+  width: 250px;
+  background-image: url('http://edtechreview.in/images/best-language-learning-apps.jpg');
+  background-size: 250px 150px;
+  border-radius: 10px;
+
+}
+
+.tile  {
+  text-decoration: none;
   color: black;
-  display: inline;
 }
+
+.groupsdiv{
+
+  width: 100%;
+  /* border: solid black 1px; */
+  border-radius: 5px;
+  margin: 0 auto;
+
+}
+
+.grouplink{
+  text-decoration: none;
+  color: black;
+  font-size: 2em;
+  display: block;
+  font-weight: 700;
+  color: #00bcd4;
+}
+.groupslocation{
+  display: block;
+}
+.groupsinterestname{
+
+}
+.groupscontainer{
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.groupcontainer{
+  width: 80vw;
+  margin: 50px auto;
+  display: grid;
+  grid-template-areas:
+  ' image name'
+  'image nickname'
+  ' image location'
+  ' image description'
+
+  'events events '
+  'interests interests';
+}
+
+.groupname{
+  color:#00bcd4;
+  font-size: 2em;
+  grid-area: name;
+  margin-left: 10px;
+}
+.groupimage{
+  max-width: 50vw;
+  grid-area: image;
+}
+.grouplocation{
+  grid-area: location;
+  margin-left: 10px;
+}
+.groupdescription{
+  grid-area: description;
+  margin-left: 10px;
+}
+.groupevents{
+  grid-area: events;
+  border: solid black 1px;
+}
+.groupinterests{
+  grid-area: interests;
+
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  border: solid black 1px;
+}
+.groupnickname{
+ grid-area: nickname;
+ margin-left: 10px;
+}
+.groupeventindividual{
+  border: solid black 1px;
+}
+
+.groupinterests li {
+  float: left;
+}
+
+.groupinterests li a {
+  display: block;
+  text-align: center;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+.create a {
+  text-decoration: none;
+  font-size: 15px;
+  }
+
+.nextevent {
+  font-size: 22px;
+  float:right;
+}
+
+.eventtitle a{
+  text-decoration: none;
+
+}
+
+.container {
+  max-width: 700px;
+  margin-left: 50px;
+}
+
+<<<<<<< HEAD
+.eventtitle {
+  position: relative;
+  left: 80%;
+
+  }
+.react-calendar {
+position:absolute;
+}
+=======
+.create a {
+  text-decoration: none;
+  font-size: 15px;
+  }
+ 
+ .nextevent {
+  font-size: 22px;
+  float:right;
+ }
+ 
+ .eventtitle a{
+  text-decoration: none;
+ 
+ }
+ 
+ .container {
+  max-width: 700px;
+  margin-left: 50px;
+ }
+ 
+ .eventtitle {
+  position: relative;
+  left: 80%;
+ 
+  }
+ .react-calendar {
+ position:absolute;
+ }
+>>>>>>> 05bb7d624065689461616b0a697c235d8fc4027c

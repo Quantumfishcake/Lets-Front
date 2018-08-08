@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-const INTERESTS_SERVER_URL = 'http://localhost:3000/interests.json'
+const INTERESTS_SERVER_URL = 'https://backend-lets.herokuapp.com/interests.json'
 
 class Interests extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       interests: []
@@ -14,22 +14,24 @@ class Interests extends Component {
     const fetchInterests = () => {
       console.log(INTERESTS_SERVER_URL)
       axios.get(INTERESTS_SERVER_URL).then((results) => {
-        this.setState({interests: results.data})
+        this.setState({ interests: results.data })
         console.log(results.data)
       })
     }
     fetchInterests()
   }
 
-  render () {
+  render() {
     console.log(this.state.interests)
     const { interests } = this.state
     console.log(interests)
     console.log(interests.interests)
     return (
-      <div >
+      <div className='categorycontainer'>
 
-        {interests && interests.interests && interests.interests.map((x) => <p><Link to={{pathname: '/groups', search: `?filterBy=${x.name}`}}>{x.name}</Link></p>)}
+        {interests && interests.interests && interests.interests.map((x) => <Link to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}> <span className='card' style={{ 'display': 'block' }}>
+          <div className={x.name}></div><span style={{ 'text-decoration': 'none' }} className='tile'>{x.name}</span>
+        </span></Link>)}
 
       </div>
     )
