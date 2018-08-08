@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
-import Groups from './Groups.js'
-import Header from './Header'
-import Footer from './Footer'
-import Interests from './Interests.js'
+import Groups from './components/Groups.js'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Interests from './components/Interests.js'
 
 
 class Home extends Component {
