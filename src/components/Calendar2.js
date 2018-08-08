@@ -1,40 +1,27 @@
 import React, { Component } from 'react'
 import Calendar from 'react-calendar'
-import { Redirect } from 'react-router'
+import { history } from '../Routes'
 
 class Calendar2 extends Component {
-  constructor() {
-    super()
-    this.state = {
-      date: '',
-      redirect: false,
-      newDate: ''
-    }
+  onChange = (date) => {
+    const newDate = date.toLocaleDateString().split('/').reverse().join('-')
+    history.push({
+      pathname: '/events',
+      search: `?filterBy=${newDate}`
+    })
   }
 
-onChange = (date) => {
-  const newDate = date.toLocaleDateString().split('/').reverse().join('-')
-  this.setState({newDate: newDate, redirect: true})
-  console.log(this.state)
-}
-
-render() {
-  const { redirect } = this.state;
-  if (redirect) {
-    return <Redirect to={{
-      pathname: "/events",
-      search: `?filterBy=${this.state.newDate}`,
-    }}/>;
+  render() {
+    const { date } = this.props
+    return (
+      <div>
+        <Calendar
+          onChange={this.onChange}
+          value={ date ? new Date(this.props.date) : new Date() }
+        />
+      </div>
+    )
   }
-  return (
-    <div>
-      <Calendar
-        onChange={this.onChange}
-        value={this.state.date}
-      />
-    </div>
-  )
-}
 }
 
 export default Calendar2

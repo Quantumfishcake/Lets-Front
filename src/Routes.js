@@ -1,5 +1,6 @@
 import React from 'react'
-import { HashRouter as Router, Route } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 
 import Groups from './components/Groups'
 import Group from './components/Group'
@@ -14,25 +15,24 @@ import Newevent from './components/Newevent'
 import User from './components/User'
 import Login from './components/Login'
 
+export const history = createBrowserHistory()
+
 const Routes = (
-  <Router>
+  <Router history={history}>
     <div>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/groups' component={Groups} />
+        <Route exact path='/newgroup' component={NewGroup} />
+        <Route exact path='/groups/:id' component={Group} />
+        <Route exact path='/groups/:id/edit' component={EditGroup} />
+        <Route exact path='/events' component={Events} />
+        <Route exact path='/newevent' component={Newevent} />
+        <Route exact path='/events/:id' component={Event} />
+        <Route exact path='/user/:id' component={User} />
+        <Route exact path='/login' component={Login} />
+      </Switch>
 
-      <Route exact path='/' component={Home} />
-
-      <Route exact path='/groups' component={Groups} />
-      <Route exact path='/newgroup' component={NewGroup} />
-      <Route exact path='/groups/:id' component={Group} />
-      <Route exact path='/groups/:id/edit' component={EditGroup} />
-
-
-      <Route exact path='/events' component={Events} />
-      <Route exact path='/newevent' component={Newevent} />
-      <Route exact path='/events/:id' component={Event} />
-
-
-      <Route exact path='/user/:id' component={User} />
-      <Route exact path='/login' component={Login}/>
     </div>
   </Router>
 )

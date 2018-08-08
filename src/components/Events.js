@@ -58,37 +58,36 @@ class Events extends Component {
      <div className="maincontainer">
        <div className="container">
          <div className="col-sm-12">
-       <Header />
-       <div className="col-sm-4 sidebar">
-       <Calendar2 />
+           <Header />
+           <div className="col-sm-4 sidebar">
+           <Calendar2 />
+           <div className="col-sm-8 page-content">
+           <Link to={
+             {
+               pathname: '/newevent/',
+                 state: { from: this.props.location }
+             }
+           }>Create a new Event</Link>
+           {this.state.events.map(event => {
+             return (
+               <div className="eventtitle">
+                 <h3>
+                   {event.name}
+                 </h3>
+                 <h4>Where : {event.location}</h4>
+                 <p>Description : {event.description}</p>
+                 <p>date: {event.date}</p>
+               </div>
 
-         <div className="col-sm-8 page-content">
-         <Link to={
-           {
-             pathname: '/newevent/',
-             state: { from: this.props.location }
-           }
-         }>Create a new Event</Link>
-         {this.state.events.map(event => {
-           return (
-             <div className="eventtitle">
-               <h3>
-                 {event.name}
-               </h3>
-               <h4>Where : {event.location}</h4>
-               <p>Description : {event.description}</p>
-               <p>date: {event.date}</p>
-             </div>
-
-           )
-         })}
+             )
+           })}
+           </div>
+         </div>
          </div>
        </div>
-       </div>
      </div>
-   </div>
-   )
- }
+     )
+   }
 }
 
  export default Events;
