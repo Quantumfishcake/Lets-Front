@@ -94,7 +94,7 @@ class Newevent extends Component {
 
             <label>
               What :
-              <input onChange={this._handleNameInput} ype="text" name="name" value={this.state.event.name} autoFocus></input>
+              <input onChange={this._handleNameInput} type="text" name="name" value={this.state.event.name} autoFocus></input>
             </label>
               <br></br>
             <label>
