@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Header'
 import Calendar2 from './Calendar2'
-import { Link } from 'react-router-dom';
 
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
@@ -13,12 +12,13 @@ class Event extends Component {
       event: {},
       event_id: this.props.match.params.id,
       users: [],
-      group: {}
+      group: {},
     }
 
     const fetchEvent = () => {
       let url = SERVER_URL + 'events/' + this.state.event_id + '.json';
       axios.get(url).then(event => {
+        console.log(event.data)
         this.setState({
           event: event.data,
           users: event.data.users,

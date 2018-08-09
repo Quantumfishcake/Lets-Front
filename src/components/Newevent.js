@@ -25,7 +25,7 @@ class Newevent extends Component {
         capacity: 0
       }
     }
-   console.log(props.history.location.state.group_id)
+    console.log(props.history.location.state.group_id)
     this._handleNameInput = this._handleNameInput.bind(this)
     this._handleDateInput = this._handleDateInput.bind(this)
     this._handleTimeInput = this._handleTimeInput.bind(this)
@@ -74,7 +74,7 @@ class Newevent extends Component {
   _createEvent(event) {
     event.preventDefault();
     console.log(this.state.event);
-    axios.post(SERVER_URL + 'events.json', this.state.event).then((response) => {
+    localStorage.getItem('jwt') == null ? false : axios.post(SERVER_URL + 'events.json', { headers: { "Authorization": 'Bearer ' + localStorage.getItem('jwt') } }, { data: this.state.event }).then((response) => {
       console.log(response);
 
       <Redirect to={{
