@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import Header from './Header'
+import { history } from '../Routes'
 
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
@@ -22,7 +22,8 @@ class Newevent extends Component {
         location: '',
         time: '',
         date: '',
-        capacity: 0
+        capacity: 0,
+        redirect: false
       }
     }
     console.log(props.history.location.state.group_id)
@@ -34,6 +35,7 @@ class Newevent extends Component {
     this._handleDescriptionInput = this._handleDescriptionInput.bind(this)
     this._handleImageInput = this._handleImageInput.bind(this)
     this._createEvent = this._createEvent.bind(this)
+    axios.defaults.headers.common = { "Authorization": 'Bearer ' + localStorage.getItem('jwt') }
   }
 
   _handleNameInput(event) {
@@ -71,16 +73,14 @@ class Newevent extends Component {
   }
 
 
-  _createEvent(event) {
+  _createEvent (event) {
     event.preventDefault();
     console.log(this.state.event);
     localStorage.getItem('jwt') == null ? false : axios.post(SERVER_URL + 'events.json', { headers: { "Authorization": 'Bearer ' + localStorage.getItem('jwt') } }, { data: this.state.event }).then((response) => {
       console.log(response);
-
-      <Redirect to={{
-        pathname: SERVER_URL + 'events/',
-        from: this.props.location
-      }} />
+      history.push({
+        pathname: '/groups'
+      })
     }).catch((errors) => {
       console.log('returned errors', errors)
     })
@@ -88,14 +88,14 @@ class Newevent extends Component {
 
   }
 
-  render() {
+  render () {
     return (
       <div className="newevent">
         <Header />
         <div className="createevent">
           <h1> Create an event</h1>
-        <form onSubmit={this._createEvent}>
-          <ul>
+          <form onSubmit={this._createEvent}>
+            <ul>
               <li><label>
                 Name of the event  <input onChange={this._handleNameInput} type="text" name="name" value={this.state.event.name} autoFocus></input>
               </label></li>
@@ -117,22 +117,22 @@ class Newevent extends Component {
                 <input onChange={this._handleCapacityInput} type="number" name="capacity" value={this.state.event.capacity} autoFocus></input>
               </label></li>
               <br></br>
-            <li><label>
-               Description<br></br>
-                  <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
+              <li><label>
+                Description<br></br>
+                <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
               </label></li>
               <br></br>
               <li><label>
                 Upload an event cover image
                   <input onChange={this._handleImageInput} type="file" name="image" value={this.state.event.image} ></input>
-                  <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
+                <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
               </label></li>
               <br></br>
               <button type="submit" >Create Event</button>
-          </ul>
-        </form>
+            </ul>
+          </form>
+        </div>
       </div>
-    </div>
     )
   }
 }

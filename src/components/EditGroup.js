@@ -99,36 +99,39 @@ class EditGroup extends Component {
     }
     return (
 
-      <div >
+      <div className="container">
         <Header />
+        <div className="creategroup">
         <h1>Edit Group</h1>
         <form onSubmit={this._handleSubmit}>
-          <label>
+        <ul>
+          <li><label>
             Name:
             <input type='text' name='name' onChange={this.handleChange('name')} value={this.state.name} />
-          </label>
-          <label>
+          </label></li>
+          <li><label><br></br>
             Description:
             <input type='text' name='name' onChange={this.handleChange('description')} value={this.state.description} />
-          </label>
-          <label>
+          </label></li>
+          <li><label><br></br>
             Location:
             <input type='text' name='name' onChange={this.handleChange('location')} value={this.state.location} />
-          </label>
-          <label>
+          </label></li><br></br>
+          <li><label>
             Image:
             <input type='text' name='name' onChange={this.handleChange('image')} value={this.state.image} />
-          </label>
-          <label>
+          </label></li>
+          <li><label><br></br>
             Nicknames:
             <input type='text' name='name' onChange={this.handleChange('nickname')} value={this.state.nickname} />
-          </label>
-
+          </label></li><br></br>
+          <div>
           {this.state.allInterests.map((x) => <button type="button" className={btn_class} onClick={this._addInterest} value={x.id}>{x.name}</button>)}
-
+          </div>
           <input type='submit' value='Create' className='button' onClick={this._handleSubmit} />
-
+          </ul>
         </form>
+        </div>
       </div>
     )
   }

@@ -10,16 +10,16 @@ const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
 class Events extends Component {
   constructor(props) {
-   super(props)
-   this.state = {
-     events: []
-   }
-   axios.get(SERVER_URL + 'events.json').then(events => {
-     this.setState({
-       events: events.data.events
-     })
-   })
- }
+    super(props)
+    this.state = {
+      events: []
+    }
+    axios.get(SERVER_URL + 'events.json').then(events => {
+      this.setState({
+        events: events.data.events
+      })
+    })
+  }
   render() {
 
     const { location } = this.props
@@ -63,9 +63,9 @@ class Events extends Component {
           </div>
         </div>
       </div>
-      )
-      }
-    }
+    )
+  }
+}
 
 
 
