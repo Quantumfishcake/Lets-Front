@@ -73,7 +73,7 @@ class Newevent extends Component {
   }
 
 
-  _createEvent (event) {
+  _createEvent(event) {
     event.preventDefault();
     console.log(this.state.event);
     localStorage.getItem('jwt') == null ? false : axios.post(SERVER_URL + 'events.json', { headers: { "Authorization": 'Bearer ' + localStorage.getItem('jwt') } }, { data: this.state.event }).then((response) => {
@@ -88,49 +88,51 @@ class Newevent extends Component {
 
   }
 
-  render () {
+  render() {
     return (
       <div className="newevent">
         <Header />
         <div className="createevent">
           <h1> Create an event</h1>
-          <form onSubmit={this._createEvent}>
-            <ul>
-              <li><label>
-                Name of the event  <input onChange={this._handleNameInput} type="text" name="name" value={this.state.event.name} autoFocus></input>
-              </label></li>
-              <br></br>
-              <li><label>
-                Date/Time
+          <div className="container">
+            <form onSubmit={this._createEvent}>
+              <ul>
+                <li><label>
+                  Name of the event  <input onChange={this._handleNameInput} type="text" name="name" value={this.state.event.name} autoFocus></input>
+                </label></li>
+                <br></br>
+                <li><label>
+                  Date/Time
                 <input onChange={this._handleDateInput} type="date" name="date" value={this.state.event.date}></input>
-                <input onChange={this._handleTimeInput} type="time" name="time" value={this.state.event.time}></input>
+                  <input onChange={this._handleTimeInput} type="time" name="time" value={this.state.event.time}></input>
 
-              </label></li>
-              <br></br>
-              <li><label>
-                Location
+                </label></li>
+                <br></br>
+                <li><label>
+                  Location
                   <input onChange={this._handleLocationInput} type="text" name="location" value={this.state.event.location} autoFocus></input>
-              </label></li>
-              <br></br>
-              <li><label>
-                Number of attendees
+                </label></li>
+                <br></br>
+                <li><label>
+                  Number of attendees
                 <input onChange={this._handleCapacityInput} type="number" name="capacity" value={this.state.event.capacity} autoFocus></input>
-              </label></li>
-              <br></br>
-              <li><label>
-                Description<br></br>
-                <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
-              </label></li>
-              <br></br>
-              <li><label>
-                Upload an event cover image
+                </label></li>
+                <br></br>
+                <li><label>
+                  Description<br></br>
+                  <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
+                </label></li>
+                <br></br>
+                <li><label>
+                  Upload an event cover image
                   <input onChange={this._handleImageInput} type="file" name="image" value={this.state.event.image} ></input>
-                <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
-              </label></li>
-              <br></br>
-              <button type="submit" >Create Event</button>
-            </ul>
-          </form>
+                  <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
+                </label></li>
+                <br></br>
+                <button type="submit" >Create Event</button>
+              </ul>
+            </form>
+          </div>
         </div>
       </div>
     )

@@ -14,19 +14,24 @@ class Api extends Component {
       events: [],
       interests: [],
       user_id: '',
-      group_id: ''
+      group_id: '',
+      roles: ''
     }
 
     const fetchGroup = () => {
       axios.get(GROUP_SERVER_URL + this.props.id + '.json').then((results) => {
+        console.log(results.data.roles[0].user_id)
         this.setState({
           group: results.data,
           events: results.data.events,
-          interests: results.data.interests
+          interests: results.data.interests,
+          roles: results.data.roles[0].user_id,
+          user_id: localStorage.getItem('user_id')
         })
       })
     }
     fetchGroup()
+    
   }
 
   // _join = (event) => {
@@ -53,15 +58,12 @@ class Api extends Component {
     return newDate.join('-')
   }
 
-
-
-
-
-
   render () {
     const { group } = this.state
     const { events } = this.state
     const { interests } = this.state
+    const { roles } = this.state 
+    const { user_id } = this.state 
     return (
       <div >
         <div className='groupcontainer'>
@@ -73,8 +75,9 @@ class Api extends Component {
           <h4 className='groupnickname'>For: {group.nickname}'s</h4>
           <h4 className='groupevents'>Upcoming Events: {events.map((x) => <div className='groupeventindividual'><Link to={`/events/${x.id}`} className='groupeventindividualname'>{x.name}</Link><p className='groupeventindividualdate'>{this.convertdate(x.date)}</p><p className='groupeventindividuallocation'>{x.location}</p><p className='groupeventindividualdescription'>{x.description}</p></div>)}</h4>
           <h4 className='groupinterests'> {interests.map((x) => <li><Link to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}>{x.name}</Link></li>)}</h4>
-          <Link to={`/groups/${this.props.id}/edit`}>Edit</Link>
-          <Link to={{ pathname: '/newevent', state: { group_id: group.id } }}>New Event</Link>
+          
+          {user_id == roles ? <Link to={`/groups/${this.props.id}/edit`}>Edit</Link> : false}
+          {user_id == roles ? <Link to={{ pathname: '/newevent', state: { group_id: group.id } }}>New Event</Link> : false}
         </div>
       </div>
     )

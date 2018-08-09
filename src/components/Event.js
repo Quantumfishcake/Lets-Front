@@ -35,7 +35,7 @@ class Event extends Component {
     return (
         <div >
         <Header />
-        <Calendar2 />
+          
 
         <h2>{this.state.event.name}</h2>
         <p>on {this.state.event.date} at {this.state.event.time}</p>

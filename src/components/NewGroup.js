@@ -4,11 +4,13 @@ import Header from './Header'
 import { Redirect } from 'react-router'
 
 const GROUPS_SERVER_URL = 'https://backend-lets.herokuapp.com/groups'
+const ROLES_SERVER_URL = 'https://backend-lets.herokuapp.com/roles.json'
+const GROUPSGET_SERVER_URL = 'https://backend-lets.herokuapp.com/groups.json'
 
 class NewGroup extends Component {
   constructor() {
     super()
-    this.state = { name: '', description: '', location: '', image: '', nickname: '', redirect: false, user: '' }
+    this.state = { name: '', description: '', location: '', image: '', nickname: '', redirect: false, user_id: localStorage.getItem('user_id') }
     this._handleSubmit = this._handleSubmit.bind(this)
     axios.defaults.headers.common = {"Authorization": 'Bearer ' + localStorage.getItem('jwt')}
   }
@@ -19,8 +21,13 @@ class NewGroup extends Component {
 
   createNewGroup(group) {
     console.log(this.state)
-    localStorage.getItem('jwt') == null ? false : axios.post(GROUPS_SERVER_URL, { name: group.name, description: group.description, image: group.image, location: group.location, nickname: group.nickname }).then((results) => {
-      console.log(results.data)
+    localStorage.getItem('jwt') == null ? false : axios.post(GROUPS_SERVER_URL, { name: group.name, description: group.description, image: group.image, location: group.location, nickname: group.nickname, user_id: group.user_id }).then((results) => {
+      axios.get(GROUPSGET_SERVER_URL).then((results) => {
+        console.log(results.data.groups.pop().id)
+        console.log(this.state.user_id)
+        axios.post(ROLES_SERVER_URL, { user_id: this.state.user_id, group_id: (results.data.groups.pop().id)+1, admin: true}).then((results) => {console.log(results)})
+      })
+      console.log(results)
       this.setState({ redirect: true })
     }).catch(function (error) {
       console.log(error.response)
@@ -53,15 +60,15 @@ class NewGroup extends Component {
           </label></li>
           <li><label><br></br>
             Description:
-            <input type='text' name='description' onChange={this.handleChange('description')} value={this.state.description} />
+            <textarea type='text' name='description' onChange={this.handleChange('description')} value={this.state.description} />
           </label></li>
           <li><label><br></br>
             Location:
-            <input type='text' name='location' onChange={this.handleChange('location')} value={this.state.location} />
+            <input type='text' name='location1' onChange={this.handleChange('location')} value={this.state.location} />
           </label></li><br></br>
           <li><label>
             Image:
-            <input type='text' name='image' onChange={this.handleChange('image')} value={this.state.image} />
+            <input type='text' name='image2' onChange={this.handleChange('image')} value={this.state.image} />
           </label></li>
           <li><label><br></br>
             Nicknames:
