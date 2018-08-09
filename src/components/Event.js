@@ -35,16 +35,15 @@ class Event extends Component {
     return (
         <div >
         <Header />
-          
-
+        <div className="row">
         <h2>{this.state.event.name}</h2>
-        <p>on {this.state.event.date} at {this.state.event.time}</p>
-        <h4>Venue : {this.state.event.location}</h4>
+        <p>Date {this.state.event.date} at {this.state.event.time}</p>
+        <h4>At : {this.state.event.location}</h4>
         <p> {this.state.users.length} {this.state.group.nickname}s going</p>
         <hr />
 
         <p>Info : {this.state.event.description}</p>
-
+      </div>
       </div>
     )
   }

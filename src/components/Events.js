@@ -30,37 +30,32 @@ class Events extends Component {
     console.log(location)
 
     return (
-      <div className='maincontainer'>
-        <div className='container'>
-            <Header />
-            <div className='col-sm-4 sidebar'>
+      <div className="header">
+        <Header />
+        <div className='maincontainer'>
+            <div className='container'>
+              <div className='col-sm-8.page-content.col-left'>
               <Calendar2 date={date} />
 
-            
-
-                {eventsFiltered.map(event => {
+            {eventsFiltered.map(event => {
 
                   return (
                     <div className='eventtitle'>
                       <h3>
                         <Link to={{ pathname: '/events/' + event.id }} >{event.name}</Link>
                       </h3>
-                      <p>date: {event.date}</p>
+                      <p>Date: {event.date}</p>
                       <p>Description : {event.description}</p>
-
-
                     </div>
                   )
                 })}
-
+                  </div>
             </div>
           </div>
         </div>
-
       )
       }
     }
-
 
 
 

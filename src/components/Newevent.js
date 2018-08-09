@@ -94,7 +94,7 @@ class Newevent extends Component {
         <Header />
         <div className="createevent">
           <h1> Create an event</h1>
-          <div className="container">
+          <div className="containerevent">
         <form onSubmit={this._createEvent}>
           <ul>
               <li><label>
@@ -134,7 +134,7 @@ class Newevent extends Component {
         </form>
       </div>
     </div>
-    </div>
+</div>
     )
   }
 }

@@ -74,7 +74,7 @@ class Api extends Component {
           <h4 className='groupevents'>Upcoming Events: {events.map((x) => <div className='groupeventindividual'><Link to={`/events/${x.id}`} className='groupeventindividualname'>{x.name}</Link><p className='groupeventindividualdate'>{this.convertdate(x.date)}</p><p className='groupeventindividuallocation'>{x.location}</p><p className='groupeventindividualdescription'>{x.description}</p></div>)}</h4>
           <h4 className='groupinterests'> {interests.map((x) => <li><Link to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}>{x.name}</Link></li>)}</h4>
           <Link to={`/groups/${this.props.id}/edit`}>Edit</Link>
-          <Link to={{ pathname: '/newevent', state: { group_id: group.id } }}>New Event</Link>
+          <Link to={{ pathname: '/newevent', state: { group_id: group.id } }}>Create an event</Link>
         </div>
       </div>
     )
