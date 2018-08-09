@@ -12,8 +12,7 @@ class Home extends Component {
       <div className='App'>
         <Header />
         <Loginpic />
-        <Calendar2 />
-        <div className='interestscontainer'>
+            <div className='interestscontainer'>
           <h3>Explore by Category</h3>
           <Interests />
         </div>
