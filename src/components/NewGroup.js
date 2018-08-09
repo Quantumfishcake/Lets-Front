@@ -50,15 +50,15 @@ class NewGroup extends Component {
           </label></li>
           <li><label><br></br>
             Description:
-            <input type='text' name='description' onChange={this.handleChange('description')} value={this.state.description} />
+            <textarea type='text' name='description' onChange={this.handleChange('description')} value={this.state.description} />
           </label></li>
           <li><label><br></br>
             Location:
-            <input type='text' name='location' onChange={this.handleChange('location')} value={this.state.location} />
+            <input type='text' name='location1' onChange={this.handleChange('location')} value={this.state.location} />
           </label></li><br></br>
           <li><label>
             Image:
-            <input type='text' name='image' onChange={this.handleChange('image')} value={this.state.image} />
+            <input type='text' name='image2' onChange={this.handleChange('image')} value={this.state.image} />
           </label></li>
           <li><label><br></br>
             Nicknames:

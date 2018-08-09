@@ -32,17 +32,11 @@ class Events extends Component {
     return (
       <div className='maincontainer'>
         <div className='container'>
-          <div className='col-sm-12'>
             <Header />
             <div className='col-sm-4 sidebar'>
               <Calendar2 date={date} />
-              <div className='col-sm-8 page-content'>
-                <Link to={
-                  {
-                    pathname: '/newevent/',
-                    state: { from: this.props.location }
-                  }
-                }>Create a new Event</Link>
+
+            
 
                 {eventsFiltered.map(event => {
 
@@ -58,11 +52,11 @@ class Events extends Component {
                     </div>
                   )
                 })}
-              </div>
+
             </div>
           </div>
         </div>
-      </div>
+
       )
       }
     }

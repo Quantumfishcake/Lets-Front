@@ -349,15 +349,6 @@ font-size: 14px;
   float:right;
 }
 
-.eventtitle a{
-  text-decoration: none;
-
-}
-
-.container {
-  max-width: 700px;
-  margin-left: 50px;
-}
 
 .react-calendar {
 position:absolute;
@@ -367,21 +358,15 @@ position:absolute;
   float:right;
  }
 
+ .eventtitle {
+   margin-top: 50px;
+  margin-left: 50px;
+  border-bottom: 1px solid grey;
+ }
+
  .eventtitle a{
   text-decoration: none;
-
  }
-
- .container {
-  max-width: 700px;
-  margin-left: 50px;
- }
-
- .eventtitle {
-  position: relative;
-  left: 80%;
-
-  }
 
 .createevent {
   height: 200px;
@@ -417,6 +402,7 @@ button[type="submit"] {
   background-color:royalblue;
   color:#ffffff;
   margin-left: 200px;
+  max-width:
 }
 
 input[type="text"] {
@@ -425,7 +411,7 @@ input[type="text"] {
 
 input[type="date"] {
   max-width: 100px;
-  margin-left: 87px;
+  margin-left: 139px;
 }
 input[type="time"] {
   max-width: 100px;
@@ -433,26 +419,30 @@ input[type="time"] {
 }
 
 input[name="location"] {
-  margin-left: 99px;
+  margin-left: 152px;
 }
 input[type="number"] {
   max-width: 100px;
+  margin-left: 49px;
 }
 textarea[name="description"] {
-  margin-left: 175px;
+  margin-left: 224px;
   max-width: 340px;
 }
 input[type="file"] {
  max-width: 190px;
+ margin-left: 2px;
 }
 
 input[name="image"] {
  max-width: 100px;
+ margin-left: 20px;
+
 }
- .react-calendar{
-   position: fixed;
+.react-calendar{
+   position: absolute;
    top: 200px;
-   left: 100px;
+   left: 800px;
  }
 
 .creategroup {
@@ -491,11 +481,11 @@ input[name="name"] {
   margin-left: 67px;
 }
 
-input[name="location"] {
+input[name="location1"] {
   margin-left: 41px;
 }
 
-input[name="image"] {
+input[name="image2"] {
   margin-left: 63px;
 }
 input[name="nicknames"] {
