@@ -67,7 +67,7 @@ class SignUp extends Component {
     })
   }
 
- 
+
   _handleSubmit(e) {
     e.preventDefault();
     axios.post(USER_SERVER_URL, this.state).then((result) => {
@@ -83,6 +83,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
+        <Header />
         <form onSubmit={this._handleSubmit}>
           <label>
             {this.state.message}
