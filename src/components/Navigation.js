@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from './images/logo.png';
 import { history } from '../Routes'
 
- 
+
 
 class Nav extends Component {
 
@@ -13,7 +13,7 @@ class Nav extends Component {
       pathname: '/',
     })
   }
- 
+
   render () {
     return (
       <div className='navbar'>
@@ -27,7 +27,7 @@ class Nav extends Component {
           {localStorage.getItem('jwt') == null ? false : <p>{localStorage.getItem('username')}</p>}
           {localStorage.getItem('jwt') == null ? false : <button onClick={this._logOut}>Log Out</button>}
           {localStorage.getItem('jwt') == null ? <Link to={`/signin`} className='navlink'>Sign In</Link> : false}
-          {localStorage.getItem('jwt') == null ? <Link to={`/singup`} className='navlink'>Sign Up</Link> : false}
+          {localStorage.getItem('jwt') == null ? <Link to={`/signup`} className='navlink'>Sign Up</Link> : false}
         </ul>
       </div>
     )

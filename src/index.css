@@ -348,19 +348,12 @@ font-size: 14px;
   font-size: 22px;
   float:right;
 }
-
-
-.react-calendar {
-position:absolute;
-}
  .nextevent {
   font-size: 22px;
   float:right;
  }
 
  .eventtitle {
-   margin-top: 50px;
-  margin-left: 50px;
   border-bottom: 1px solid grey;
  }
 
@@ -369,20 +362,21 @@ position:absolute;
  }
 
 .createevent {
-  height: 200px;
-   width: 700px;
+  background-color: darkgrey;
+  height: 600px;
+  width: 1440px;
+  position: fixed;
+  top: 50%;
+  margin-top: -250px;
 
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   margin-top: -250px;
-   margin-left: -300px;
 }
 
 .createevent ul li {
   list-style-type: none;
   font-weight: bolder;
+  margin-left: 400px;
 }
+
 
 .createevent input {
   margin-left:18px;
@@ -401,8 +395,7 @@ button[type="submit"] {
   border-radius: 10px;
   background-color:royalblue;
   color:#ffffff;
-  margin-left: 200px;
-  max-width:
+  margin-left: `700px;
 }
 
 input[type="text"] {
@@ -440,9 +433,10 @@ input[name="image"] {
 
 }
 .react-calendar{
+   border: 3px solid grey;
    position: absolute;
-   top: 200px;
-   left: 800px;
+   top: 152px;
+   left: 1071px;
  }
 
 .creategroup {
@@ -461,6 +455,10 @@ input[name="image"] {
   width: 300px;
   padding: 8px 15px 8px 15px;
 
+}
+
+.createevent h1 {
+  margin-left: 400px;
 }
 
 .creategroup ul li {
@@ -490,4 +488,22 @@ input[name="image2"] {
 }
 input[name="nicknames"] {
   margin-left: 23px;
+}
+
+.maincontainer {
+  padding:70px;
+}
+.container {
+  padding:18px;
+  max-width: 960px;
+  border: 2px solid grey;
+}
+
+.row {
+  max-width: 1024px;
+  margin: 81px;
+}
+
+.containerevent {
+  max-width: 1024px;
 }

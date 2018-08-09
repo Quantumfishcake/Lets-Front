@@ -94,15 +94,15 @@ class Newevent extends Component {
         <Header />
         <div className="createevent">
           <h1> Create an event</h1>
-          <div className="container">
-            <form onSubmit={this._createEvent}>
-              <ul>
-                <li><label>
-                  Name of the event  <input onChange={this._handleNameInput} type="text" name="name" value={this.state.event.name} autoFocus></input>
-                </label></li>
-                <br></br>
-                <li><label>
-                  Date/Time
+          <div className="containerevent">
+        <form onSubmit={this._createEvent}>
+          <ul>
+              <li><label>
+                Name of the event  <input onChange={this._handleNameInput} type="text" name="name" value={this.state.event.name} autoFocus></input>
+              </label></li>
+              <br></br>
+              <li><label>
+                Date/Time
                 <input onChange={this._handleDateInput} type="date" name="date" value={this.state.event.date}></input>
                   <input onChange={this._handleTimeInput} type="time" name="time" value={this.state.event.time}></input>
 
@@ -135,6 +135,8 @@ class Newevent extends Component {
           </div>
         </div>
       </div>
+    
+
     )
   }
 }
