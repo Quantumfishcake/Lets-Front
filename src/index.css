@@ -229,7 +229,7 @@ body {
   grid-template-columns: 30% 30% 30%;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
-  
+
 }
 .groupscontainer2{
   width: 80vw;
@@ -286,7 +286,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  
+
 }
 .groupnickname{
  grid-area: nickname;
@@ -359,19 +359,9 @@ font-size: 14px;
   margin-left: 50px;
 }
 
-.eventtitle {
-  position: relative;
-  left: 80%;
-
-  }
 .react-calendar {
 position:absolute;
 }
-.create a {
-  text-decoration: none;
-  font-size: 15px;
-  }
-
  .nextevent {
   font-size: 22px;
   float:right;
@@ -393,8 +383,121 @@ position:absolute;
 
   }
 
+.createevent {
+  height: 200px;
+   width: 700px;
+
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   margin-top: -250px;
+   margin-left: -300px;
+}
+
+.createevent ul li {
+  list-style-type: none;
+  font-weight: bolder;
+}
+
+.createevent input {
+  margin-left:18px;
+  width: 300px;
+  padding: 8px 15px 8px 15px;
+
+}
+label {
+  max-width: 600px;
+
+}
+
+button[type="submit"] {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color:royalblue;
+  color:#ffffff;
+  margin-left: 200px;
+}
+
+input[type="text"] {
+  width: 300px;
+}
+
+input[type="date"] {
+  max-width: 100px;
+  margin-left: 87px;
+}
+input[type="time"] {
+  max-width: 100px;
+  margin-left: 67px;
+}
+
+input[name="location"] {
+  margin-left: 99px;
+}
+input[type="number"] {
+  max-width: 100px;
+}
+textarea[name="description"] {
+  margin-left: 175px;
+  max-width: 340px;
+}
+input[type="file"] {
+ max-width: 190px;
+}
+
+input[name="image"] {
+ max-width: 100px;
+}
  .react-calendar{
    position: fixed;
    top: 200px;
    left: 100px;
  }
+
+.creategroup {
+   height: 200px;
+    width: 700px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -300px;
+ }
+
+.creategroup input {
+  margin-left:18px;
+  width: 300px;
+  padding: 8px 15px 8px 15px;
+
+}
+
+.creategroup ul li {
+  list-style-type: none;
+  font-weight: bolder;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color:royalblue;
+  color:#ffffff;
+  margin-left: 140px;
+}
+
+input[name="name"] {
+  margin-left: 67px;
+}
+
+input[name="location"] {
+  margin-left: 41px;
+}
+
+input[name="image"] {
+  margin-left: 63px;
+}
+input[name="nicknames"] {
+  margin-left: 23px;
+}

@@ -19,10 +19,12 @@ class SignIn extends Component {
   }
 
 
-  _handleEmailInput (e) {
-    this.setState({
-      auth: { ...this.state.auth, email: e.target.value }
-    })
+
+
+_handleEmailInput(e) {
+  this.setState({
+    auth: { ...this.state.auth, email: e.target.value }
+  })
 
   }
 
@@ -35,16 +37,25 @@ class SignIn extends Component {
   _handleSubmit (e) {
     e.preventDefault();
 
-    axios.post(SERVER_URL, this.state).then((result) => {
-     
-      localStorage.setItem('jwt', result.data.jwt);
-      localStorage.setItem('username', this.state.auth.email)
-      history.push({
-        pathname: '/'
-      })
-    }).catch((errors) => {
-      console.log('Errors came back:', errors);
-    })
+  axios.post(SERVER_URL, this.state ).then( (result) => {
+    console.log("Response came back:", result);
+    localStorage.setItem("jwt", result.data.jwt);
+    localStorage.setItem("username", this.state.auth.email);
+
+  })
+  // .then(() => {
+  //   axios.get(USER_SERVER_URL).then( result => {
+  //     _.filter(result.data.users, {username: localStorage.getItem("username")}) {
+  //       localStorage.setItem("user_id",  )
+  //     }
+  //   })
+  //   })
+  // })
+  .then(() => {
+      this.props.history.push('/')}
+    ).catch( (errors) => {
+    console.log("Errors came back:",  errors);
+  })
 
   }
 

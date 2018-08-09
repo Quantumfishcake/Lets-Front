@@ -8,20 +8,20 @@ import Calendar2 from './Calendar2'
 
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
-
 class Events extends Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      events: []
-    }
-    axios.get(SERVER_URL + 'events.json').then(events => {
-      this.setState({
-        events: events.data.events
-      })
-    })
-  }
-  render () {
+   super(props)
+   this.state = {
+     events: []
+   }
+   axios.get(SERVER_URL + 'events.json').then(events => {
+     this.setState({
+       events: events.data.events
+     })
+   })
+ }
+  render() {
+
     const { location } = this.props
     const { events } = this.state
     const date = url.parse(location.search, true).query.filterBy
@@ -49,13 +49,12 @@ class Events extends Component {
                   return (
                     <div className='eventtitle'>
                       <h3>
-                        {event.name}
+                        <Link to={{ pathname: '/events/' + event.id }} >{event.name}</Link>
                       </h3>
-                      <h4>Where : {event.location}</h4>
-                      <p>Description : {event.description}</p>
-                      <p>event_id : {event.id}</p>
                       <p>date: {event.date}</p>
-                      <p>More details : <Link to={{ pathname: '/events/' + event.id }} >{event.name}</Link></p>
+                      <p>Description : {event.description}</p>
+
+
                     </div>
                   )
                 })}
@@ -64,9 +63,10 @@ class Events extends Component {
           </div>
         </div>
       </div>
-    )
-  }
-}
+      )
+      }
+    }
+
 
 
 

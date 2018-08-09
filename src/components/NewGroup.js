@@ -41,33 +41,36 @@ class NewGroup extends Component {
     }
     return (
 
-      <div >
+      <div className="container">
         <Header />
+        <div className="creategroup">
         <h1>New Group</h1>
         <form onSubmit={this._handleSubmit}>
-          <label>
+          <ul>
+          <li><label>
             Name:
             <input type='text' name='name' onChange={this.handleChange('name')} value={this.state.name} />
-          </label>
-          <label>
+          </label></li>
+          <li><label><br></br>
             Description:
-            <input type='text' name='name' onChange={this.handleChange('description')} value={this.state.description} />
-          </label>
-          <label>
+            <input type='text' name='description' onChange={this.handleChange('description')} value={this.state.description} />
+          </label></li>
+          <li><label><br></br>
             Location:
-            <input type='text' name='name' onChange={this.handleChange('location')} value={this.state.location} />
-          </label>
-          <label>
+            <input type='text' name='location' onChange={this.handleChange('location')} value={this.state.location} />
+          </label></li><br></br>
+          <li><label>
             Image:
-            <input type='text' name='name' onChange={this.handleChange('image')} value={this.state.image} />
-          </label>
-          <label>
+            <input type='text' name='image' onChange={this.handleChange('image')} value={this.state.image} />
+          </label></li>
+          <li><label><br></br>
             Nicknames:
-            <input type='text' name='name' onChange={this.handleChange('nickname')} value={this.state.nickname} />
-          </label>
+            <input type='text' name='nicknames' onChange={this.handleChange('nickname')} value={this.state.nickname} />
+          </label></li><br></br>
           <input type='submit' value='Create' className='button' />
-
+          </ul>
         </form>
+        </div>
       </div>
     )
   }

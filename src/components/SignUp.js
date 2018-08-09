@@ -71,26 +71,30 @@ class SignUp extends Component {
     e.preventDefault();
 
 
-    axios.post(SERVER_URL, this.state).then((result) => {
-      console.log("Response came back:", result);
-      localStorage.setItem("jwt", result.data.jwt);
-      localStorage.setItem("username", this.state.auth.email)
-    }).catch((errors) => {
-      console.log("Errors came back:", errors);
-    })
+_handleSubmit(e) {
+  e.preventDefault();
 
-  }
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this._handleSubmit}>
-          <label>
-            {this.state.message}
-            <input onChange={this._handleEmailInput} type="email" name="email" value={this.state.user.email} autoFocus required></input>
-          </label>
-          <label>
-            Password:
+  axios.post(USER_SERVER_URL, this.state ).then( (result) => {
+    console.log("Response came back:", result);
+    localStorage.setItem("jwt", result.data.jwt);
+    localStorage.setItem("username", this.state.auth.email)
+  }).catch( (errors) => {
+    console.log("Errors came back:",  errors);
+  })
+
+ }
+
+   render() {
+     return(
+       <div>
+         <form onSubmit={this._handleSubmit}>
+           <label>
+             {this.state.message}
+             <input onChange={this._handleEmailInput} type="email" name="email" value={this.state.user.email} autoFocus required></input>
+           </label>
+           <label>
+             Password:
              <input onChange={this._handlePasswordInput} type="password" name="password" value={this.state.user.password} required></input>
           </label>
           <label>
