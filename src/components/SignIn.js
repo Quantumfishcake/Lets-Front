@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Header from './Header'
+import { history } from '../Routes'
 
-const SERVER_URL = 'https://backend-lets.herokuapp.com/user_token/'
+const SERVER_URL = 'https://backend-lets.herokuapp.com/user_token'
 
 class SignIn extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
-
       auth: {
         email: '',
         password: ''
@@ -20,28 +19,31 @@ class SignIn extends Component {
   }
 
 
-  _handleEmailInput(e) {
+  _handleEmailInput (e) {
     this.setState({
       auth: { ...this.state.auth, email: e.target.value }
     })
 
   }
 
-  _handlePasswordInput(e) {
+  _handlePasswordInput (e) {
     this.setState({
       auth: { ...this.state.auth, password: e.target.value }
     })
   }
 
-  _handleSubmit(e) {
+  _handleSubmit (e) {
     e.preventDefault();
 
     axios.post(SERVER_URL, this.state).then((result) => {
-      console.log("Response came back:", result);
-      localStorage.setItem("jwt", result.data.jwt);
-      localStorage.setItem("username", this.state.auth.email)
+     
+      localStorage.setItem('jwt', result.data.jwt);
+      localStorage.setItem('username', this.state.auth.email)
+      history.push({
+        pathname: '/'
+      })
     }).catch((errors) => {
-      console.log("Errors came back:", errors);
+      console.log('Errors came back:', errors);
     })
 
   }
@@ -53,13 +55,13 @@ class SignIn extends Component {
         <form onSubmit={this._handleSubmit}>
           <label>
             Email:
-            <input onChange={this._handleEmailInput} type="email" name="email" value={this.state.auth.email} autoFocus required></input>
+            <input onChange={this._handleEmailInput} type='email' name='email' value={this.state.auth.email} autoFocus required></input>
           </label>
           <label>
             Password:
-            <input onChange={this._handlePasswordInput} type="password" name="password" value={this.state.auth.password} required></input>
+            <input onChange={this._handlePasswordInput} type='password' name='password' value={this.state.auth.password} required></input>
           </label>
-          <button type="submit">Log in</button>
+          <button type='submit'>Log in</button>
         </form>
       </div>
     )

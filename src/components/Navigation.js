@@ -5,6 +5,11 @@ import logo from './images/logo.png';
  
 
 class Nav extends Component {
+
+  _logOut = () => {
+    localStorage.clear()
+    this.forceUpdate()
+  }
  
   render () {
     return (
@@ -16,6 +21,8 @@ class Nav extends Component {
           <Link to={`/groups`} className='navlink'>Groups</Link>
           <Link to={`/events`} className='navlink'>Events</Link>
           {localStorage.getItem('jwt') == null ? false : <Link to={`/newgroup`} className='navlink'>New Group</Link>}
+          {localStorage.getItem('jwt') == null ? false : <p>{localStorage.getItem('username')}</p>}
+          {localStorage.getItem('jwt') == null ? false : <button onClick={this._logOut}>Log Out</button>}
           {localStorage.getItem('jwt') == null ? <Link to={`/signin`} className='navlink'>Sign In</Link> : false}
           {localStorage.getItem('jwt') == null ? <Link to={`/singup`} className='navlink'>Sign Up</Link> : false}
         </ul>

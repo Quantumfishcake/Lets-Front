@@ -24,6 +24,7 @@ class EditGroup extends Component {
     }
     this._handleSubmit = this._handleSubmit.bind(this)
     this._addInterest = this._addInterest.bind(this)
+    axios.defaults.headers.common = {"Authorization": 'Bearer ' + localStorage.getItem('jwt')}
 
     const fetchGroup = () => {
       axios.get(GROUP_SERVER_URL + +(this.props.match.params.id) + '.json').then((results) => {
