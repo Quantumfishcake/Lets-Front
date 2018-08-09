@@ -8,47 +8,18 @@ import Calendar2 from './Calendar2'
 
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
-
 class Events extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      events: []
-    }
-
-    console.log(this.props)
-    const searchfield = url.parse(this.props.location.search, true).query
-    console.log(searchfield)
-    const filterWord = searchfield.filterBy
-
-
-
-    const fetchEvents = () => {
-      if (filterWord !== undefined) {
-        axios.get(SERVER_URL + 'events.json').then(events => {
-          console.log(filterWord)
-          console.log(typeof filterWord)
-          const data2 = _.filter(events.data.events, {date: filterWord})
-          console.log(events.data.events[0].date)
-          console.log(data2)
-          this.setState({
-            events: data2
-          })
-
-        }).catch((errors) => {
-          console.log(errors);
-        })
-      }
-      else {
-
-    axios.get(SERVER_URL + 'events.json').then(events => {
-      this.setState({
-        events: events.data.events
-      })
-    })
-  }
-}
-}
+   super(props)
+   this.state = {
+     events: []
+   }
+   axios.get(SERVER_URL + 'events.json').then(events => {
+     this.setState({
+       events: events.data.events
+     })
+   })
+ }
   render() {
     const { location } = this.props
     const { events } = this.state
@@ -77,13 +48,12 @@ class Events extends Component {
                   return (
                     <div className='eventtitle'>
                       <h3>
-                        {event.name}
+                        <Link to={{ pathname: '/events/' + event.id }} >{event.name}</Link>
                       </h3>
-                      <h4>Where : {event.location}</h4>
-                      <p>Description : {event.description}</p>
-                      <p>event_id : {event.id}</p>
                       <p>date: {event.date}</p>
-                      <p>More details : <Link to={{ pathname: '/events/' + event.id }} >{event.name}</Link></p>
+                      <p>Description : {event.description}</p>
+
+                                          
                     </div>
                   )
                 })}
@@ -92,10 +62,8 @@ class Events extends Component {
           </div>
         </div>
       </div>
-    )
+      )
+      }
     }
-  }
-}
-}
 
  export default Events;

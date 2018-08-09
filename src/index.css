@@ -342,5 +342,73 @@ position:absolute;
 
   }
  .react-calendar {
- position:absolute;
+ position:r;
  }
+
+.createevent {
+  height: 200px;
+   width: 700px;
+
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   margin-top: -250px;
+   margin-left: -300px;
+}
+
+.createevent ul li {
+  list-style-type: none;
+  font-weight: bolder;
+}
+
+label {
+  max-width: 600px;
+
+}
+
+button {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color:royalblue;
+  color:#ffffff;
+  margin-left: 200px;
+}
+
+.createevent input {
+  margin-left:18px;
+  width: 300px;
+  padding: 8px 15px 8px 15px;
+
+}
+
+input[type="text"] {
+  width: 300px;
+}
+
+input[type="date"] {
+  max-width: 100px;
+  margin-left: 87px;
+}
+input[type="time"] {
+  max-width: 100px;
+  margin-left: 67px;
+}
+
+input[name="location"] {
+  margin-left: 99px;
+}
+input[type="number"] {
+  max-width: 100px;
+}
+textarea[name="description"] {
+  margin-left: 175px;
+  max-width: 340px;
+}
+input[type="file"] {
+ max-width: 190px;
+}
+
+input[name="image"] {
+ max-width: 100px;
+}

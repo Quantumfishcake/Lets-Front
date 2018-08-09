@@ -90,46 +90,48 @@ class Newevent extends Component {
 
   render() {
     return (
-      <div>
+      <div className="newevent">
         <Header />
+        <div className="createevent">
         <form onSubmit={this._createEvent}>
+          <ul>
+              <li><label>
+                Name of the event  <input onChange={this._handleNameInput} type="text" name="name" value={this.state.event.name} autoFocus></input>
+              </label></li>
+              <br></br>
+              <li><label>
+                Date/Time
+                <input onChange={this._handleDateInput} type="date" name="date" value={this.state.event.date}></input>
+                <input onChange={this._handleTimeInput} type="time" name="time" value={this.state.event.time}></input>
 
-          <label>
-            What :
-            <input onChange={this._handleNameInput} ype="text" name="name" value={this.state.event.name} autoFocus></input>
-          </label>
-          <br></br>
-          <label>
-            When :
-            <input onChange={this._handleDateInput} type="date" name="date" value={this.state.event.date}></input>
-            <input onChange={this._handleTimeInput} type="time" name="time" value={this.state.event.time}></input>
-
-          </label>
-          <br></br>
-          <label>
-            Where :
-              <input onChange={this._handleLocationInput} type="text" name="location" value={this.state.event.location} autoFocus></input>
-          </label>
-          <br></br>
-          <label>
-            Maximum number of attendees :
-              <input onChange={this._handleCapacityInput} type="number" name="capacity" value={this.state.event.capacity} autoFocus></input>
-          </label>
-          <br></br>
-          <label>
-            Event Description :
-              <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
-          </label>
-          <br></br>
-          <label>
-            Upload an event cover image :
-              <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
-            <input onChange={this._handleImageInput} type="file" name="image" value={this.state.event.image} ></input>
-          </label>
-          <br></br>
-          <button type="submit" >Create Event</button>
+              </label></li>
+              <br></br>
+              <li><label>
+                Location
+                  <input onChange={this._handleLocationInput} type="text" name="location" value={this.state.event.location} autoFocus></input>
+              </label></li>
+              <br></br>
+              <li><label>
+                Number of attendees
+                <input onChange={this._handleCapacityInput} type="number" name="capacity" value={this.state.event.capacity} autoFocus></input>
+              </label></li>
+              <br></br>
+            <li><label>
+               Description<br></br>
+                  <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
+              </label></li>
+              <br></br>
+              <li><label>
+                Upload an event cover image
+                  <input onChange={this._handleImageInput} type="file" name="image" value={this.state.event.image} ></input>
+                  <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
+              </label></li>
+              <br></br>
+              <button type="submit" >Create Event</button>
+          </ul>
         </form>
       </div>
+    </div>
     )
   }
 }
