@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:900');
 
 body {
   margin: 0;
@@ -197,29 +198,40 @@ body {
 }
 
 .groupsdiv{
-
+  position: relative;
   width: 100%;
-  /* border: solid black 1px; */
+  border: solid black 1px;
   border-radius: 5px;
   margin: 0 auto;
-
+  background: linear-gradient(#004092, #020202, transparent)
 }
 
 .grouplink{
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
   text-decoration: none;
   color: black;
   font-size: 2em;
   display: block;
   font-weight: 700;
-  color: #00bcd4;
+  color: white;
+   text-shadow: 1px 1px 0 rgba(0,0,0,.26);
+   font-family: 'Catamaran', sans-serif;
+  -webkit-text-stroke: 1px black;
 }
 .groupslocation{
   display: block;
 }
-.groupsinterestname{
 
-}
 .groupscontainer{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  
+}
+.groupscontainer2{
   width: 80vw;
   margin: 0 auto;
 }
@@ -237,28 +249,35 @@ body {
   'events events '
   'interests interests';
 }
+.groupimage {
+  width: 100%;
+  float:left;
+  z-index: 0
+}
 
 .groupname{
   color:#00bcd4;
   font-size: 2em;
   grid-area: name;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
+
 }
 .groupimage{
   max-width: 50vw;
   grid-area: image;
+  border-radius: 5px;
 }
 .grouplocation{
   grid-area: location;
-  margin-left: 10px;
+  margin: 0 0 0 10px;
 }
 .groupdescription{
   grid-area: description;
   margin-left: 10px;
+  font-size: 14px;
 }
 .groupevents{
   grid-area: events;
-  border: solid black 1px;
 }
 .groupinterests{
   grid-area: interests;
@@ -267,18 +286,44 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  border: solid black 1px;
+  
 }
 .groupnickname{
  grid-area: nickname;
  margin-left: 10px;
+ margin: 0 0 0 10px;
 }
 .groupeventindividual{
-  border: solid black 1px;
+  border: solid rgb(186, 186, 186) 1px;
+  padding: 10px;
+  margin: 0 0 5px 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 4px 3px -2px rgba(186,186,186,0.45);
+  -moz-box-shadow: 4px 4px 3px -2px rgba(186,186,186,0.45);
+  box-shadow: 4px 4px 3px -2px rgba(186,186,186,0.45);
+}
+.groupeventindividualname{
+text-decoration: none;
+color: #00bcd4
+}
+.groupeventindividualdate{
+margin: 0;
+font-size: 14px;
+color: red;
+}
+.groupeventindividualdescription{
+font-size: 12px;
+}
+.groupeventindividuallocation{
+margin: 0;
+font-size: 14px;
 }
 
 .groupinterests li {
   float: left;
+  background-color: rgb(209, 209, 209);
+  margin: 0 5px 0 0;
+  border-radius: 5px;
 }
 
 .groupinterests li a {
@@ -286,6 +331,12 @@ body {
   text-align: center;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
+  color: black;
+  text-transform: capitalize;
+  font-size: 12px;
+}
+.groupinterests li:hover {
+  background-color:rgb(186, 186, 186);
 }
 
 .create a {
@@ -345,6 +396,7 @@ position:absolute;
  position:r;
  }
 
+<<<<<<< HEAD
 .createevent {
   height: 200px;
    width: 700px;
@@ -412,3 +464,11 @@ input[type="file"] {
 input[name="image"] {
  max-width: 100px;
 }
+=======
+
+ .react-calendar{
+   position: fixed;
+   top: 200px;
+   left: 100px;
+ }
+>>>>>>> 19703300acb106dfad2ab4951ea4cc0eb76f26fc

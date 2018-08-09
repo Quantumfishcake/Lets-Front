@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Header from './Header'
 
-const LOGIN_SERVER_URL='http://localhost:3000/'
+const SERVER_URL='http://localhost:3000/user_token/'
 
-class LogIn extends Component {
+class SignIn extends Component {
   constructor() {
     super()
     this.state={
@@ -35,7 +35,7 @@ _handlePasswordInput(e) {
 _handleSubmit(e) {
   e.preventDefault();
 
-  axios.post(LOGIN_SERVER_URL + 'user_token', this.state ).then( (result) => {
+  axios.post(SERVER_URL, this.state ).then( (result) => {
     console.log("Response came back:", result);
     localStorage.setItem("jwt", result.data.jwt);
     localStorage.setItem("username", this.state.auth.email)
@@ -52,11 +52,11 @@ _handleSubmit(e) {
         <form onSubmit={this._handleSubmit}>
           <label>
             Email:
-            <input onChange={this._handleEmailInput} type="text" name="email" value={this.state.auth.email} autoFocus></input>
+            <input onChange={this._handleEmailInput} type="email" name="email" value={this.state.auth.email} autoFocus required></input>
           </label>
           <label>
             Password:
-            <input onChange={this._handlePasswordInput} type="password" name="password" value={this.state.auth.password} ></input>
+            <input onChange={this._handlePasswordInput} type="password" name="password" value={this.state.auth.password} required></input>
           </label>
           <button type="submit">Log in</button>
         </form>
@@ -68,4 +68,4 @@ _handleSubmit(e) {
 
 
 
-export default LogIn
+export default SignIn

@@ -21,10 +21,11 @@ class Events extends Component {
    })
  }
   render() {
+
     const { location } = this.props
     const { events } = this.state
     const date = url.parse(location.search, true).query.filterBy
-    const eventsFiltered = location.search == '' ? events : _.filter(events, { date })
+    const eventsFiltered = location.search == '' ? _.sortBy(events, ['date']) : _.filter(events, { date })
 
     console.log(location)
 
@@ -53,7 +54,7 @@ class Events extends Component {
                       <p>date: {event.date}</p>
                       <p>Description : {event.description}</p>
 
-                                          
+
                     </div>
                   )
                 })}
@@ -62,8 +63,16 @@ class Events extends Component {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       )
       }
     }
+=======
+    )
+  }
+}
+>>>>>>> 19703300acb106dfad2ab4951ea4cc0eb76f26fc
 
- export default Events;
+
+
+export default Events;
