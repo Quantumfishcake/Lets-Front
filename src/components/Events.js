@@ -11,49 +11,21 @@ const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
 class Events extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       events: []
     }
-
-    console.log(this.props)
-    const searchfield = url.parse(this.props.location.search, true).query
-    console.log(searchfield)
-    const filterWord = searchfield.filterBy
-
-
-
-    const fetchEvents = () => {
-      if (filterWord !== undefined) {
-        axios.get(SERVER_URL + 'events.json').then(events => {
-          console.log(filterWord)
-          console.log(typeof filterWord)
-          const data2 = _.filter(events.data.events, {date: filterWord})
-          console.log(events.data.events[0].date)
-          console.log(data2)
-          this.setState({
-            events: data2
-          })
-
-        }).catch((errors) => {
-          console.log(errors);
-        })
-      }
-      else {
-
     axios.get(SERVER_URL + 'events.json').then(events => {
       this.setState({
         events: events.data.events
       })
     })
   }
-}
-}
-  render() {
+  render () {
     const { location } = this.props
     const { events } = this.state
     const date = url.parse(location.search, true).query.filterBy
-    const eventsFiltered = location.search == '' ? events : _.filter(events, { date })
+    const eventsFiltered = location.search == '' ? _.sortBy(events, ['date']) : _.filter(events, { date })
 
     console.log(location)
 
@@ -94,7 +66,8 @@ class Events extends Component {
       </div>
     )
   }
-
 }
 
- export default Events;
+
+
+export default Events;

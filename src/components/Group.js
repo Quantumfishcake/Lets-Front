@@ -44,24 +44,37 @@ class Api extends Component {
   //   })
   // }
 
+  convertdate = (date) => {
+    const newDate = date.split('-').reverse().slice(0, -1)
+    const arrDates = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const arrDates2 = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+    const index1 = arrDates2.indexOf(newDate[1])
+    newDate[1] = arrDates[index1]
+    return newDate.join('-')
+  }
+
+
 
 
 
 
   render () {
+    const { group } = this.state
+    const { events } = this.state
+    const { interests } = this.state
     return (
       <div >
         <div className='groupcontainer'>
-          <h2 className='groupname'>{this.state.group.name}</h2>
+          <h2 className='groupname'>{group.name}</h2>
           {/* <button onClick={this._join}>Join</button> */}
-          <p className='groupdescription'>{this.state.group.description}</p>
-          <img src={this.state.group.image} alt='Logo' className='groupimage'/>
-          <h4 className='grouplocation'>Location: {this.state.group.location}</h4>
-          <h4 className='groupnickname'>For: {this.state.group.nickname}'s</h4>
-          <h4 className='groupevents'>Upcoming Events: {this.state.events.map((x) => <div className='groupeventindividual'><Link to={`/events/${x.id}`}>{x.name}</Link><p>{x.date}{x.time}</p><p>{x.location}</p><p>{x.description}</p></div>)}</h4>
-          <h4 className='groupinterests'> {this.state.interests.map((x) => <li><Link to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}>{x.name}</Link></li>)}</h4>
+          <p className='groupdescription'>{group.description}</p>
+          <img src={group.image} alt='Logo' className='groupimage' />
+          <h4 className='grouplocation'>Location: {group.location}</h4>
+          <h4 className='groupnickname'>For: {group.nickname}'s</h4>
+          <h4 className='groupevents'>Upcoming Events: {events.map((x) => <div className='groupeventindividual'><Link to={`/events/${x.id}`} className='groupeventindividualname'>{x.name}</Link><p className='groupeventindividualdate'>{this.convertdate(x.date)}</p><p className='groupeventindividuallocation'>{x.location}</p><p className='groupeventindividualdescription'>{x.description}</p></div>)}</h4>
+          <h4 className='groupinterests'> {interests.map((x) => <li><Link to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}>{x.name}</Link></li>)}</h4>
           <Link to={`/groups/${this.props.id}/edit`}>Edit</Link>
-          <Link to={{ pathname: '/newevent', state: { group_id: this.state.group.id } }}>New Event</Link>
+          <Link to={{ pathname: '/newevent', state: { group_id: group.id } }}>New Event</Link>
         </div>
       </div>
     )

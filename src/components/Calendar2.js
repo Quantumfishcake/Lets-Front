@@ -18,6 +18,7 @@ class Calendar2 extends Component {
         <Calendar
           onChange={this.onChange}
           value={ date ? new Date(this.props.date) : new Date() }
+          className='calendar'
         />
       </div>
     )
@@ -25,8 +26,3 @@ class Calendar2 extends Component {
 }
 
 export default Calendar2
-
-
-{/* <Link to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}></Link>)} */ }
-// {date: Fri Aug 17 2018 00:00:00 GMT+1000 (Australian Eastern Standard Time), redirect: true}
-// date: 2018-08-06
