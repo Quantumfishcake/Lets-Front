@@ -16,7 +16,7 @@ class NewGroup extends Component {
 
   createNewGroup(group) {
     console.log(this.state)
-    axios.post(GROUPS_SERVER_URL, { name: group.name, description: group.description, image: group.image, location: group.location, nickname: group.nickname }).then((results) => {
+    axios.post(GROUPS_SERVER_URL,  {headers:{"Authorization": 'Bearer ' + localStorage.getItem('jwt')}}, {data:{ name: group.name, description: group.description, image: group.image, location: group.location, nickname: group.nickname }}).then((results) => {
       console.log(results.data)
       this.setState({ redirect: true })
     }).catch(function (error) {

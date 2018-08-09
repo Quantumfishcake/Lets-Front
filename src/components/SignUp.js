@@ -3,8 +3,7 @@ import axios from 'axios'
 import Header from './Header'
 import _ from 'lodash'
 
-const SERVER_URL='http://localhost:3000/'
-const LOGIN_SERVER_URL='http://localhost:3000/'
+const USER_SERVER_URL='http://localhost:3000/users.json'
 
 class SignUp extends Component {
   constructor() {
@@ -26,7 +25,7 @@ class SignUp extends Component {
      this._handleSubmit=this._handleSubmit.bind(this)
 
      const fetchUsers = () => {
-       axios.get(SERVER_URL + 'users.json').then( result => {
+       axios.get(USER_SERVER_URL).then( result => {
          console.log(result);
          this.setState({users: result.data.users})
        })
@@ -70,7 +69,7 @@ _handleSubmit(e) {
   e.preventDefault();
 
 
-  axios.post(SERVER_URL, this.state ).then( (result) => {
+  axios.post(USER_SERVER_URL, this.state ).then( (result) => {
     console.log("Response came back:", result);
     localStorage.setItem("jwt", result.data.jwt);
     localStorage.setItem("username", this.state.auth.email)
