@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import logo from './images/logo.png';
+import { history } from '../Routes'
 
 
 
@@ -8,7 +9,9 @@ class Nav extends Component {
 
   _logOut = () => {
     localStorage.clear()
-    this.forceUpdate()
+    history.push({
+      pathname: '/',
+    })
   }
 
   render () {

@@ -87,6 +87,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
+        <Header />
         <form onSubmit={this._handleSubmit}>
           <label>
             {this.state.message}

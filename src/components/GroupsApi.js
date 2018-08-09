@@ -7,7 +7,7 @@ import _ from 'lodash'
 const GROUPS_SERVER_URL = 'https://backend-lets.herokuapp.com/groups.json'
 
 class GroupsApi extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       groups: [],
@@ -23,7 +23,13 @@ class GroupsApi extends Component {
           const data2 = _.filter(results.data.groups, data => _.some(data.interests, { name: filterWord }))
           this.setState({ groups: data2, filterWords: filterWord })
         })
-      } else {
+      } else if (localStorage.getItem('user_id')) {
+        axios.get(GROUPS_SERVER_URL).then((results) => {
+          const data2 = _.filter(results.data.groups, data => _.some(data.roles, { 'user_id': +(localStorage.getItem('user_id')) }))
+          this.setState({ groups: data2 })
+        })
+      }
+      else {
         axios.get(GROUPS_SERVER_URL).then((results) => {
           this.setState({ groups: results.data.groups })
         })

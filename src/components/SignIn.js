@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { history } from '../Routes'
 import _ from 'lodash'
+import Header from './Header'
 
 const LOGIN_SERVER_URL = 'https://backend-lets.herokuapp.com/user_token'
 const USERS_SERVER_URL = 'https://backend-lets.herokuapp.com/users.json'
@@ -65,6 +66,7 @@ _handleEmailInput(e) {
   render() {
     return (
       <div>
+        <Header />
         <form onSubmit={this._handleSubmit}>
           <label>
             Email:

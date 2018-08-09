@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import Header from './Header'
+import { history } from '../Routes'
 
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
@@ -22,7 +22,8 @@ class Newevent extends Component {
         location: '',
         time: '',
         date: '',
-        capacity: 0
+        capacity: 0,
+        redirect: false
       }
     }
     console.log(props.history.location.state.group_id)
@@ -34,6 +35,7 @@ class Newevent extends Component {
     this._handleDescriptionInput = this._handleDescriptionInput.bind(this)
     this._handleImageInput = this._handleImageInput.bind(this)
     this._createEvent = this._createEvent.bind(this)
+    axios.defaults.headers.common = { "Authorization": 'Bearer ' + localStorage.getItem('jwt') }
   }
 
   _handleNameInput(event) {
@@ -76,11 +78,9 @@ class Newevent extends Component {
     console.log(this.state.event);
     localStorage.getItem('jwt') == null ? false : axios.post(SERVER_URL + 'events.json', { headers: { "Authorization": 'Bearer ' + localStorage.getItem('jwt') } }, { data: this.state.event }).then((response) => {
       console.log(response);
-
-      <Redirect to={{
-        pathname: SERVER_URL + 'events/',
-        from: this.props.location
-      }} />
+      history.push({
+        pathname: '/groups'
+      })
     }).catch((errors) => {
       console.log('returned errors', errors)
     })
@@ -104,36 +104,38 @@ class Newevent extends Component {
               <li><label>
                 Date/Time
                 <input onChange={this._handleDateInput} type="date" name="date" value={this.state.event.date}></input>
-                <input onChange={this._handleTimeInput} type="time" name="time" value={this.state.event.time}></input>
+                  <input onChange={this._handleTimeInput} type="time" name="time" value={this.state.event.time}></input>
 
-              </label></li>
-              <br></br>
-              <li><label>
-                Location
+                </label></li>
+                <br></br>
+                <li><label>
+                  Location
                   <input onChange={this._handleLocationInput} type="text" name="location" value={this.state.event.location} autoFocus></input>
-              </label></li>
-              <br></br>
-              <li><label>
-                Number of attendees
+                </label></li>
+                <br></br>
+                <li><label>
+                  Number of attendees
                 <input onChange={this._handleCapacityInput} type="number" name="capacity" value={this.state.event.capacity} autoFocus></input>
-              </label></li>
-              <br></br>
-            <li><label>
-               Description<br></br>
+                </label></li>
+                <br></br>
+                <li><label>
+                  Description<br></br>
                   <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
               </label></li>
               <br></br>
               <li><label>
                 Upload an event cover image
                   <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
-              </label></li>
-              <br></br>
-              <button type="submit" >Create Event</button>
-          </ul>
-        </form>
+                </label></li>
+                <br></br>
+                <button type="submit" >Create Event</button>
+              </ul>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-</div>
+
+
     )
   }
 }
