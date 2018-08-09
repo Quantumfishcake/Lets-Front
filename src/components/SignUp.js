@@ -4,7 +4,10 @@ import Header from './Header'
 import _ from 'lodash'
 
 const SERVER_URL = 'https://backend-lets.herokuapp.com/'
-const USER_SERVER_URL = 'https://backend-lets.herokuapp.com/'
+const USER_SERVER_URL = 'https://backend-lets.herokuapp.com/users'
+
+// const SERVER_URL = 'http://localhost:3000/'
+// const USER_SERVER_URL = 'http://localhost:3000/users.json'
 
 class SignUp extends Component {
   constructor() {
@@ -67,14 +70,15 @@ class SignUp extends Component {
     })
   }
 
- 
+
   _handleSubmit(e) {
     e.preventDefault();
-    axios.post(USER_SERVER_URL, this.state).then((result) => {
+    axios.post(USER_SERVER_URL, {user: this.state.user}).then((result) => {
       console.log("Response came back:", result);
-      localStorage.setItem("jwt", result.data.jwt);
-      localStorage.setItem("username", this.state.auth.email)
-    }).catch((errors) => {
+
+    }).then(() => {
+      this.props.history.push('/signin')}
+    ).catch((errors) => {
       console.log("Errors came back:", errors);
     })
 
