@@ -63,15 +63,10 @@ class Events extends Component {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       )
       }
     }
-=======
-    )
-  }
-}
->>>>>>> 19703300acb106dfad2ab4951ea4cc0eb76f26fc
+
 
 
 

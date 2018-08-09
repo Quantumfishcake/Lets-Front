@@ -93,6 +93,7 @@ class Newevent extends Component {
       <div className="newevent">
         <Header />
         <div className="createevent">
+          <h1> Create an event</h1>
         <form onSubmit={this._createEvent}>
           <ul>
               <li><label>
