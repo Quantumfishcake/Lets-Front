@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { history } from '../Routes'
+import _ from 'lodash'
 
-const SERVER_URL = 'https://backend-lets.herokuapp.com/user_token'
+
+const LOGIN_SERVER_URL = 'https://backend-lets.herokuapp.com/user_token'
+const USERS_SERVER_URL = 'https://backend-lets.herokuapp.com/users.json'
 
 class SignIn extends Component {
   constructor () {
@@ -37,21 +40,18 @@ _handleEmailInput(e) {
   _handleSubmit (e) {
     e.preventDefault();
 
-  axios.post(SERVER_URL, this.state ).then( (result) => {
+  axios.post(LOGIN_SERVER_URL, this.state ).then( (result) => {
     console.log("Response came back:", result);
     localStorage.setItem("jwt", result.data.jwt);
     localStorage.setItem("username", this.state.auth.email);
 
   })
-  // .then(() => {
-  //   axios.get(USER_SERVER_URL).then( result => {
-  //     _.filter(result.data.users, {username: localStorage.getItem("username")}) {
-  //       localStorage.setItem("user_id",  )
-  //     }
-  //   })
-  //   })
-  // })
   .then(() => {
+    axios.get(USERS_SERVER_URL).then( result => {
+      localStorage.setItem("user_id", _.filter(result.data.users, {email: localStorage.getItem("username")})[0].id )
+    })
+    })
+    .then(() => {
       this.props.history.push('/')}
     ).catch( (errors) => {
     console.log("Errors came back:",  errors);
