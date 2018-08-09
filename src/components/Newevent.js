@@ -125,7 +125,6 @@ class Newevent extends Component {
               <br></br>
               <li><label>
                 Upload an event cover image
-                  <input onChange={this._handleImageInput} type="file" name="image" value={this.state.event.image} ></input>
                   <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
               </label></li>
               <br></br>
