@@ -4,9 +4,11 @@ import { history } from '../Routes'
 import _ from 'lodash'
 import Header from './Header'
 
-
 const LOGIN_SERVER_URL = 'https://backend-lets.herokuapp.com/user_token'
 const USERS_SERVER_URL = 'https://backend-lets.herokuapp.com/users.json'
+
+// const LOGIN_SERVER_URL = 'http://localhost:3000/user_token'
+// const USERS_SERVER_URL = 'http://localhost:3000/users.json'
 
 class SignIn extends Component {
   constructor () {
@@ -55,7 +57,7 @@ _handleEmailInput(e) {
     .then(() => {
       this.props.history.push('/')}
     ).catch( (errors) => {
-    console.log("Errors came back:",  errors);
+    console.log(errors)
   })
 
   }
@@ -74,6 +76,7 @@ _handleEmailInput(e) {
             Password:
             <input onChange={this._handlePasswordInput} type='password' name='password' value={this.state.auth.password} required></input>
           </label>
+          <p>{this.state.message}</p>
           <button type='submit'>Log in</button>
         </form>
       </div>
