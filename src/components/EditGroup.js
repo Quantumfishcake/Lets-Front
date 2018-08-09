@@ -62,7 +62,7 @@ class EditGroup extends Component {
 
   editGroup(group) {
     console.log('editGroup', this.state)
-    axios.patch((GROUP_SERVER_URL + +(this.props.match.params.id) + '.json'), { id: group.id, name: group.name, description: group.description, image: group.image, location: group.location, nickname: group.nickname, interest_ids: group.interests.map((i) => i.id) }).then((results) => {
+    localStorage.getItem('jwt') == null ? false : axios.patch((GROUP_SERVER_URL + +(this.props.match.params.id) + '.json'), {headers:{"Authorization": 'Bearer ' + localStorage.getItem('jwt')}}, {data:{ id: group.id, name: group.name, description: group.description, image: group.image, location: group.location, nickname: group.nickname, interest_ids: group.interests.map((i) => i.id) }}).then((results) => {
       console.log('editGroup axios results', results.data)
       this.setState({ redirect: true })
     }).catch(function (error) {

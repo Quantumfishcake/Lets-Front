@@ -2,52 +2,53 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Header from './Header'
 
-const SERVER_URL='http://localhost:3000/user_token/'
+const SERVER_URL = 'https://backend-lets.herokuapp.com/user_token/'
 
 class SignIn extends Component {
   constructor() {
     super()
-    this.state={
+    this.state = {
 
       auth: {
         email: '',
-        password: ''}
-     }
-     this._handleEmailInput=this._handleEmailInput.bind(this)
-     this._handlePasswordInput=this._handlePasswordInput.bind(this)
-     this._handleSubmit=this._handleSubmit.bind(this)
-}
+        password: ''
+      }
+    }
+    this._handleEmailInput = this._handleEmailInput.bind(this)
+    this._handlePasswordInput = this._handlePasswordInput.bind(this)
+    this._handleSubmit = this._handleSubmit.bind(this)
+  }
 
 
-_handleEmailInput(e) {
-  this.setState({
-    auth: { ...this.state.auth, email: e.target.value }
-  })
+  _handleEmailInput(e) {
+    this.setState({
+      auth: { ...this.state.auth, email: e.target.value }
+    })
 
-}
+  }
 
-_handlePasswordInput(e) {
-  this.setState({
-    auth: { ...this.state.auth, password: e.target.value}
-  })
-}
+  _handlePasswordInput(e) {
+    this.setState({
+      auth: { ...this.state.auth, password: e.target.value }
+    })
+  }
 
-_handleSubmit(e) {
-  e.preventDefault();
+  _handleSubmit(e) {
+    e.preventDefault();
 
-  axios.post(SERVER_URL, this.state ).then( (result) => {
-    console.log("Response came back:", result);
-    localStorage.setItem("jwt", result.data.jwt);
-    localStorage.setItem("username", this.state.auth.email)
-  }).catch( (errors) => {
-    console.log("Errors came back:",  errors);
-  })
+    axios.post(SERVER_URL, this.state).then((result) => {
+      console.log("Response came back:", result);
+      localStorage.setItem("jwt", result.data.jwt);
+      localStorage.setItem("username", this.state.auth.email)
+    }).catch((errors) => {
+      console.log("Errors came back:", errors);
+    })
 
- }
+  }
 
 
   render() {
-    return(
+    return (
       <div>
         <form onSubmit={this._handleSubmit}>
           <label>

@@ -1,10 +1,10 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 
-const USER_SERVER_URL = 'http://localhost:3000/users/'
+const USER_SERVER_URL = 'https://backend-lets.herokuapp.com/users/'
 
 class User extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       name: [],
@@ -12,28 +12,28 @@ class User extends Component {
       bio: [],
 
 
-     }
+    }
 
     const fetch_user = () => {
       let url = USER_SERVER_URL + this.props.match.params.id + '.json';
-      axios.get(url).then( (result) => {
+      axios.get(url).then((result) => {
 
- this.setState({
+        this.setState({
           name: result.data.user.name,
           location: result.data.user.location,
           bio: result.data.user.bio
         })
-      }).catch((errors)=> {
+      }).catch((errors) => {
         console.log(errors);
       })
     }
 
-  fetch_user();
-}
+    fetch_user();
+  }
 
   render() {
     const { user } = this.state
-      return(
+    return (
       <div>
         <h1>Welcome {this.state.name}</h1>
         <p>{this.state.location}</p>
