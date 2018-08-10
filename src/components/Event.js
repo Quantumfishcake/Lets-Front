@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Header'
 import Calendar2 from './Calendar2'
+import { Link } from 'react-router-dom';
 
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
@@ -37,12 +38,14 @@ class Event extends Component {
         <Header />
         <div className="row">
         <h2>{this.state.event.name}</h2>
+        <img src={this.state.event.image} alt='Event Image' className='groupimage' />
         <p>Date {this.state.event.date} at {this.state.event.time}</p>
         <h4>At : {this.state.event.location}</h4>
         <p> {this.state.users.length} {this.state.group.nickname}s going</p>
         <hr />
 
         <p>Info : {this.state.event.description}</p>
+        <Link to={{pathname: '/editevent/'+ this.state.event_id}}>Edit Event</Link>
       </div>
       </div>
     )

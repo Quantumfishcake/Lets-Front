@@ -19,7 +19,6 @@ class Nav extends Component {
       <div className='navbar'>
         <img src={logo} width="250" height="100" className='logo' />
         <ul className='navlist'>
-  {console.log(this.localStorage)}
           <Link to={`/`} className='navlink'>Home</Link>
           <Link to={`/groups`} className='navlink'>Groups</Link>
           <Link to={`/events`} className='navlink'>Events</Link>
