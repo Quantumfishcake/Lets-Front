@@ -120,13 +120,12 @@ class Newevent extends Component {
                 <br></br>
                 <li><label>
                   Description<br></br>
-                  <textarea onChange={this._handleDescriptionInput} type='text' name='description' value={this.state.event.description} rows='10' cols='70' maxLength='800' placeholder='Describe your event in more details here...' required wrap='soft'></textarea>
-                </label></li>
-                <br></br>
-                <li><label>
-                  Upload an event cover image
-                  <input onChange={this._handleImageInput} type='file' name='image' value={this.state.event.image} ></input>
-                  <input onChange={this._handleImageInput} type='text' name='image' value={this.state.event.image} ></input>
+                  <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
+              </label></li>
+              <br></br>
+              <li><label>
+                Upload an event cover image
+                  <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
                 </label></li>
                 <br></br>
                 <button type='submit' >Create Event</button>
