@@ -21,7 +21,7 @@ class Interests extends Component {
     fetchInterests()
   }
 
-  render() {
+  render () {
     console.log(this.state.interests)
     const { interests } = this.state
     console.log(interests)
