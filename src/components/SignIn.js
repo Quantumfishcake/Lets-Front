@@ -65,20 +65,27 @@ _handleEmailInput(e) {
 
   render() {
     return (
-      <div>
+      <div className="Signin">
         <Header />
+
+        <div className="mainsign">
+          <h1>Sign In</h1>
+          <div className="containersignin">
         <form onSubmit={this._handleSubmit}>
+          <div className="label">
           <label>
-            Email:
+            Email:<br></br>
             <input onChange={this._handleEmailInput} type='email' name='email' value={this.state.auth.email} autoFocus required></input>
-          </label>
-          <label>
-            Password:
+          </label></div><br></br>
+        <div className="label"><label>
+            Password:<br></br>
             <input onChange={this._handlePasswordInput} type='password' name='password' value={this.state.auth.password} required></input>
-          </label>
+          </label></div>
           <p>{this.state.message}</p>
           <button type='submit'>Log in</button>
         </form>
+        </div>
+        </div>
       </div>
     )
   }

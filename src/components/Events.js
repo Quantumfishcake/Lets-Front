@@ -31,15 +31,12 @@ class Events extends Component {
 
     return (
       <div className='maincontainer'>
+        <Header />
         <div className='container'>
-          <Header />
+
           <div className='col-sm-4 sidebar'>
             <Calendar2 date={date} />
-
-
-
             {eventsFiltered.map(event => {
-
               return (
                 <div className='eventtitle'>
                   <h3>
@@ -47,8 +44,6 @@ class Events extends Component {
                   </h3>
                   <p>date: {event.date}</p>
                   <p>Description : {event.description}</p>
-
-
                 </div>
               )
             })}

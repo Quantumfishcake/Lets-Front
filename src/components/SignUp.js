@@ -88,21 +88,26 @@ class SignUp extends Component {
     return (
       <div>
         <Header />
+        <div className="Signup">
         <form onSubmit={this._handleSubmit}>
-          <label>
+          <ul>
+            <li><label>
             {this.state.message}
             <input onChange={this._handleEmailInput} type="email" name="email" value={this.state.user.email} autoFocus required></input>
-          </label>
-          <label>
+          </label></li>
+          <li><label>
             Password:
              <input onChange={this._handlePasswordInput} type="password" name="password" value={this.state.user.password} required></input>
-          </label>
-          <label>
+          </label></li>
+          <li><label>
             Password Confirmation:
              <input onChange={this._handlePasswordConfirm} type="password" name="password_confirmation" value={this.state.user.password_confirmation} required></input>
-          </label>
+          </label></li>
           <button type="submit" disabled={this.state.form_disabled}>Sign Up</button>
+        </ul>
         </form>
+
+      </div>
       </div>
     )
   }
