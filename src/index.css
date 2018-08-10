@@ -581,3 +581,9 @@ h5 {
   font-weight: bolder;
   margin-left: 400px;
   }
+button[name="signup"]{
+    margin-left: 456px;
+    padding: 15px;
+    color: white;
+    margin-top: 30px;
+  }

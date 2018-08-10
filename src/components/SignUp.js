@@ -95,22 +95,25 @@ class SignUp extends Component {
           <ul>
             <li><label>
               <br></br>
-              
+
             {this.state.message}
+            <br></br>
             <input onChange={this._handleEmailInput} type="email" name="email" value={this.state.user.email} autoFocus required></input>
           </label></li>
-          <br></br>
+
             <li><label>
-            Password:
+
+            Password:<br></br>
              <input onChange={this._handlePasswordInput} type="password" name="password" value={this.state.user.password} required></input>
           </label></li>
           <br></br>
 
           <li><label>
             Password Confirmation:
+            <br></br>
              <input onChange={this._handlePasswordConfirm} type="password" name="password_confirmation" value={this.state.user.password_confirmation} required></input>
           </label></li>
-          <button type="submit" disabled={this.state.form_disabled}>Sign Up</button>
+          <button type="submit" name="signup" disabled={this.state.form_disabled}>Sign Up</button>
           </ul>
         </form>
         </div>
