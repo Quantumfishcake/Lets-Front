@@ -3,6 +3,7 @@ import axios from 'axios'
 import { history } from '../Routes'
 import _ from 'lodash'
 import Header from './Header'
+import { Link } from 'react-router-dom'
 
 const LOGIN_SERVER_URL = 'https://backend-lets.herokuapp.com/user_token'
 const USERS_SERVER_URL = 'https://backend-lets.herokuapp.com/users.json'
@@ -67,26 +68,31 @@ _handleEmailInput(e) {
     return (
       <div className="Signin">
         <Header />
-
         <div className="mainsign">
           <h1>Sign In</h1>
           <div className="containersignin">
         <form onSubmit={this._handleSubmit}>
-          <div className="label">
-          <label>
-            Email:<br></br>
+          <ul>
+            <li><label>
+            Email:
+            <br></br>
             <input onChange={this._handleEmailInput} type='email' name='email' value={this.state.auth.email} autoFocus required></input>
-          </label></div><br></br>
-        <div className="label"><label>
-            Password:<br></br>
+              </label></li>
+            <br></br>
+              <li><label>
+            Password:
+            <br></br>
             <input onChange={this._handlePasswordInput} type='password' name='password' value={this.state.auth.password} required></input>
-          </label></div>
+          </label></li>
           <p>{this.state.message}</p>
-          <button type='submit'>Log in</button>
+          <button type='submit' name="create">Log in</button>
+          <h5> Don't have an account ?</h5><button type='submit' name="signin"><Link to={`/signup`} className='navlink'>Sign Up</Link></button>
+          </ul>
         </form>
         </div>
         </div>
       </div>
+
     )
   }
 }

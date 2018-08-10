@@ -61,6 +61,13 @@ body {
   text-decoration: none;
 
 }
+
+.logout {
+  font-size: 1em;
+  border-radius: 15px;
+  background-color: tomato;
+  color: white;
+}
 .navlink:hover {
   margin-bottom: 17px;
 	border-bottom: 3px solid #00bcd4;
@@ -396,7 +403,7 @@ button[type="submit"] {
   border-radius: 10px;
   background-color:royalblue;
   color:#ffffff;
-  margin-left: 100px;
+  margin-left: 700px;
 }
 
 input[type="text"] {
@@ -511,21 +518,15 @@ input[name="nicknames"] {
   padding:10px;
 }
 
-.mainsign {
-   position: fixed;
-   top: 60%;
-   left: 40%;
-   margin-top: -250px;
-   margin-left: -300px;
-   padding-left: 300px;
-}
 
 .label {
   font-size: 20px;
 }
 
 .containersignin {
-  max-width: 1120px;
+  width: 1440px;
+  height: 600px;
+  background-color: lightskyblue;
 }
 
 input[type="email"] {
@@ -537,3 +538,46 @@ input[type="password"] {
  font-size: 1.3em;
   border-radius: 3px;
 }
+
+.containersignin li {
+  list-style-type: none;
+  font-weight: bolder;
+  margin-left: 400px;
+  }
+.containersignin ul {
+  padding-top: 60px;
+  padding-left: 200px;
+}
+
+button[name="create"]{
+  margin-left: 466px;
+  padding: 15px;
+}
+
+button[name="signin"]{
+  margin-left: 456px;
+  padding: 15px;
+  color: white;
+}
+
+h5 {
+  padding-left: 400px;
+}
+
+.containersignup {
+  list-style-type: none;
+  width: 1440px;
+  height: 600px;
+  background-color: lightskyblue;
+}
+
+.containersignup ul {
+  padding-top: 60px;
+  padding-left: 200px;
+}
+
+.containersignup li {
+  list-style-type: none;
+  font-weight: bolder;
+  margin-left: 400px;
+  }

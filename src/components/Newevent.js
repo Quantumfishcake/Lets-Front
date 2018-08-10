@@ -105,7 +105,6 @@ class Newevent extends Component {
                   Date/Time
                 <input onChange={this._handleDateInput} type='date' name='date' value={this.state.event.date}></input>
                   <input onChange={this._handleTimeInput} type='time' name='time' value={this.state.event.time}></input>
-
                 </label></li>
                 <br></br>
                 <li><label>
