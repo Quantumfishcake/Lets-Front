@@ -6,7 +6,7 @@ import { history } from '../Routes'
 const INTERESTS_SERVER_URL = 'https://backend-lets.herokuapp.com/interests.json'
 
 class Interests extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       interests: []
@@ -22,7 +22,7 @@ class Interests extends Component {
     fetchInterests()
   }
 
-  render () {
+  render() {
     console.log(this.state.interests)
     const { interests } = this.state
     console.log(interests)
@@ -30,7 +30,7 @@ class Interests extends Component {
     return (
       <div className='categorycontainer'>
 
-         {interests && interests.interests && interests.interests.map((x) => <Link onClick={this.forceUpdate} to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}> <span className='card' style={{ 'display': 'block' }}>
+        {interests && interests.interests && interests.interests.map((x) => <Link onClick={this.forceUpdate} to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}> <span className='card' style={{ 'display': 'block' }}>
           <div className={x.name}></div><span style={{ 'text-decoration': 'none' }} className='tile'>{x.name}</span>
         </span></Link>)}
 

@@ -74,7 +74,7 @@ class Api extends Component {
       <div >
         <div className='groupcontainer'>
           <h2 className='groupname'>{group.name}</h2>
-          {this.checkIfJoined() == true ? <p>already joined</p> : <button onClick={this._join}>Join</button>}
+          {this.checkIfJoined() == true ? <p>✓</p> : <button className='joinbutton' onClick={this._join}>Join</button>}
           <p className='groupdescription'>{group.description}</p>
           <img src={group.image} alt='Logo' className='groupimage' />
           <h4 className='grouplocation'>Location: {group.location}</h4>
