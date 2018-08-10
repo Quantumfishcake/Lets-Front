@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import GroupsApi from './GroupsApi'
+import Interests from './Interests'
 
 class Groups extends Component {
   render () {
@@ -9,6 +10,8 @@ class Groups extends Component {
         <Header />
         <h1>Groups</h1>
         <GroupsApi search={this.props.location.search} />
+        <h1>Categories</h1>
+        <Interests />
 
       </div>
     )
