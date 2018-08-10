@@ -105,6 +105,7 @@ class Newevent extends Component {
                   Date/Time
                 <input onChange={this._handleDateInput} type='date' name='date' value={this.state.event.date}></input>
                   <input onChange={this._handleTimeInput} type='time' name='time' value={this.state.event.time}></input>
+
                 </label></li>
                 <br></br>
                 <li><label>
@@ -120,10 +121,10 @@ class Newevent extends Component {
                 <li><label>
                   Description<br></br>
                   <textarea onChange={this._handleDescriptionInput} type="text" name="description" value={this.state.event.description} rows="10" cols="70" maxLength="800" placeholder="Describe your event in more details here..." required wrap="soft"></textarea>
-              </label></li>
-              <br></br>
-              <li><label>
-                Upload an event cover image
+                </label></li>
+                <br></br>
+                <li><label>
+                  Upload an event cover image
                   <input onChange={this._handleImageInput} type="text" name="image" value={this.state.event.image} ></input>
                 </label></li>
                 <br></br>

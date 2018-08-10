@@ -42,11 +42,10 @@ class Api extends Component {
   }
 
   _join = (event) => {
-    event.preventDefault()
     axios.post(ROLES_SERVER_URL, { user_id: this.state.current_user_id, group_id: this.state.group.id, admin: false}).then((results) => {
-      console.log(results)
+      this.forceUpdate()
     })
-    this.forceUpdate()
+    
       }
   
   checkIfJoined = () => {
