@@ -10,6 +10,7 @@ import EditGroup from './components/EditGroup'
 
 import Event from './components/Event'
 import Events from './components/Events'
+import EditEvent from './components/EditEvent'
 import Newevent from './components/Newevent'
 
 import User from './components/User'
@@ -30,6 +31,7 @@ const Routes = (
         <Route exact path='/events' component={Events} />
         <Route exact path='/newevent' component={Newevent} />
         <Route exact path='/events/:id' component={Event} />
+        <Route exact path='/editevent/:id' component={EditEvent} />
         <Route exact path='/user/:id' component={User} />
         <Route exact path='/signin' component={ SignIn } />
         <Route exact path='/signup' component={ SignUp } />
