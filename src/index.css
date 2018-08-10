@@ -19,16 +19,16 @@ body {
 }
 .Loginpic{
   width: 100vw;
-  height: 25vw;
+  height: 19  vw;
   background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 .mainimgtext{
-  font-size: 6em;
+  font-size: 5em;
   color: white;
   text-align: center;
   padding-bottom: 0;
   margin-bottom: 0;
-  padding-top: 15vh;
+  padding-top: 8vh;
 
 }
 
@@ -212,7 +212,7 @@ body {
   left: 4px;
   text-decoration: none;
   color: black;
-  font-size: 2em;
+  font-size: 1.6em;
   display: block;
   font-weight: 700;
   color: white;
@@ -355,6 +355,7 @@ font-size: 14px;
 
  .eventtitle {
   border-bottom: 1px solid grey;
+  margin-left: 26px;
  }
 
  .eventtitle a{
@@ -362,7 +363,7 @@ font-size: 14px;
  }
 
 .createevent {
-  background-color: darkgrey;
+  background-color: lightgrey;
   height: 600px;
   width: 1440px;
   position: fixed;
@@ -395,7 +396,7 @@ button[type="submit"] {
   border-radius: 10px;
   background-color:royalblue;
   color:#ffffff;
-  margin-left: `700px;
+  margin-left: 100px;
 }
 
 input[type="text"] {
@@ -490,11 +491,8 @@ input[name="nicknames"] {
   margin-left: 23px;
 }
 
-.maincontainer {
-  padding:70px;
-}
 .container {
-  padding:18px;
+  margin:76px;
   max-width: 960px;
   border: 2px solid grey;
 }
@@ -506,4 +504,36 @@ input[name="nicknames"] {
 
 .containerevent {
   max-width: 1024px;
+}
+
+.foot-container {
+  background-color: lightblue;
+  padding:10px;
+}
+
+.mainsign {
+   position: fixed;
+   top: 60%;
+   left: 40%;
+   margin-top: -250px;
+   margin-left: -300px;
+   padding-left: 300px;
+}
+
+.label {
+  font-size: 20px;
+}
+
+.containersignin {
+  max-width: 1120px;
+}
+
+input[type="email"] {
+ font-size: 1.3em;
+  border-radius: 3px;
+}
+
+input[type="password"] {
+ font-size: 1.3em;
+  border-radius: 3px;
 }
