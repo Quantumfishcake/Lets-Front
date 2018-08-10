@@ -537,3 +537,8 @@ input[type="password"] {
  font-size: 1.3em;
   border-radius: 3px;
 }
+
+.interestsgroupscontainer{
+  width: 80vw;
+  margin: 0 auto;
+}

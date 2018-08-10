@@ -10,8 +10,10 @@ class Groups extends Component {
         <Header />
         <h1>Groups</h1>
         <GroupsApi search={this.props.location.search} />
-        <h1>Categories</h1>
-        <Interests />
+        <div className='interestsgroupscontainer'>
+          <h1>Categories</h1>
+          <Interests />
+        </div>
 
       </div>
     )
