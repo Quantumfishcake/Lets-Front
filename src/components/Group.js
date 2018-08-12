@@ -19,7 +19,8 @@ class Api extends Component {
       roles_admin: '',
       roles: [],
       admin: false,
-      current_user_id: localStorage.getItem('user_id')
+      current_user_id: localStorage.getItem('user_id'),
+      joined: false
     }
     axios.defaults.headers.common = {"Authorization": 'Bearer ' + localStorage.getItem('jwt')}
 
@@ -38,20 +39,28 @@ class Api extends Component {
       })
     }
     fetchGroup()
+
+    const checkIfJoined = () => {
+      if ( _.some(this.state.roles, (r) => { return r.user_id == this.state.current_user_id })) {
+        this.setState({joined: true})
+        return true
+      } else {
+        return false
+      }
+     
+     } 
+     checkIfJoined()
     
   }
 
   _join = (event) => {
     axios.post(ROLES_SERVER_URL, { user_id: this.state.current_user_id, group_id: this.state.group.id, admin: false}).then((results) => {
-      this.forceUpdate()
+      this.setState({joined: true})
     })
     
       }
   
-  checkIfJoined = () => {
-   return _.some(this.state.roles, (r) => { return r.user_id == this.state.current_user_id })
-  
-  } 
+ 
       
   convertdate = (date) => {
     const newDate = date.split('-').reverse().slice(0, -1)
@@ -73,7 +82,7 @@ class Api extends Component {
       <div >
         <div className='groupcontainer'>
           <h2 className='groupname'>{group.name}</h2>
-          {this.checkIfJoined() == true ? <p>✓</p> : <button className='joinbutton' onClick={this._join}>Join</button>}
+          {this.state.joined == true ? <p>✓</p> : <button className='joinbutton' onClick={this._join}>Join</button>}
           <p className='groupdescription'>{group.description}</p>
           <img src={group.image} alt='Logo' className='groupimage' />
           <h4 className='grouplocation'>Location: {group.location}</h4>
