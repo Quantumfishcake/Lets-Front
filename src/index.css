@@ -246,20 +246,12 @@ body {
 .groupcontainer{
   width: 80vw;
   margin: 50px auto;
-  display: grid;
-  grid-template-areas:
-  ' image name'
-  'image nickname'
-  ' image location'
-  ' image description'
 
-  'events events '
-  'interests interests';
 }
-.groupimage {
-  width: 100%;
-  float:left;
-  z-index: 0
+
+.groupcontainermaincontent{
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .groupname{
@@ -270,6 +262,8 @@ body {
 
 }
 .groupimage{
+  float:left;
+  grid-column-start: 1;
   max-width: 50vw;
   grid-area: image;
   border-radius: 5px;
@@ -285,6 +279,9 @@ body {
 }
 .groupevents{
   grid-area: events;
+}
+.groupadmin{
+  margin-left:10px;
 }
 .groupinterests{
   grid-area: interests;
@@ -504,9 +501,9 @@ input[name="nicknames"] {
   border: 2px solid grey;
 }
 
-.row {
-  max-width: 1024px;
-  margin: 81px;
+.eventcontainer {
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
 .containerevent {
@@ -515,7 +512,13 @@ input[name="nicknames"] {
 
 .foot-container {
   background-color: lightblue;
-  padding:10px;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:20px;
+  padding: 1rem;
+  margin-top: 50px;
+  text-align: center;
 }
 
 
@@ -592,7 +595,11 @@ button[name="signup"]{
     margin-top: 30px;
   }
 
-.joinbutton[name="signup"]{
-  width: 30px;
-  height: 10px;
+.joinbutton{
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color:royalblue;
+  color:#ffffff;
+  margin-left: 10px;
   }

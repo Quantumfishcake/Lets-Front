@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Header'
-import Calendar2 from './Calendar2'
 import { Link } from 'react-router-dom';
 
-const SERVER_URL = "https://backend-lets.herokuapp.com/"
+const SERVER_URL = 'https://backend-lets.herokuapp.com/'
 
 class Event extends Component {
   constructor (props) {
@@ -13,7 +12,7 @@ class Event extends Component {
       event: {},
       event_id: this.props.match.params.id,
       users: [],
-      group: {},
+      group: {}
     }
 
     const fetchEvent = () => {
@@ -25,28 +24,31 @@ class Event extends Component {
           users: event.data.users,
           group: event.data.group
         })
+        console.log(this.state.group)
       }).catch((errors) => {
-        console.log(errors);
+        console.log(errors)
       })
     }
-    fetchEvent();
+    fetchEvent()
   }
 
   render () {
+    const { event, group } = this.state
     return (
-        <div >
+      <div >
         <Header />
-        <div className="row">
-        <h2>{this.state.event.name}</h2>
-        <img src={this.state.event.image} alt='Event Image' className='groupimage' />
-        <p>Date {this.state.event.date} at {this.state.event.time}</p>
-        <h4>At : {this.state.event.location}</h4>
-        <p> {this.state.users.length} {this.state.group.nickname}s going</p>
-        <hr />
+        <div className='eventcontainer'>
+          <h1>{group.name}</h1>
+          <h2>{event.name}</h2>
+          <img src={event.image} alt='Event Image' className='groupimage' />
+          <p>Date {event.date} at {event.time}</p>
+          <h4>At : {event.location}</h4>
+          <p> {this.state.users.length} {group.nickname}s going</p>
+          <hr />
 
-        <p>Info : {this.state.event.description}</p>
-        <Link to={{pathname: '/editevent/'+ this.state.event_id}}>Edit Event</Link>
-      </div>
+          <p>Info : {event.description}</p>
+          <Link to={{ pathname: '/editevent/' + this.state.event_id }}>Edit Event</Link>
+        </div>
       </div>
     )
   }

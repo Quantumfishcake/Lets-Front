@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header'
 import GroupsApi from './GroupsApi'
 import Interests from './Interests'
+import Footer from './Footer'
 
 class Groups extends Component {
   render () {
@@ -13,8 +14,9 @@ class Groups extends Component {
         <div className='interestsgroupscontainer'>
           <h1>Categories</h1>
           <Interests />
+         
         </div>
-
+        <Footer />
       </div>
     )
   }
