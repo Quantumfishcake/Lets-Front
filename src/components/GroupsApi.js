@@ -11,7 +11,8 @@ class GroupsApi extends Component {
     super(props)
     this.state = {
       groups: [],
-      filterWords: ''
+      filterWords: '',
+      roles: []
     }
 
     const searchfield = url.parse(this.props.search, true).query
@@ -20,17 +21,21 @@ class GroupsApi extends Component {
     const fetchGroups = () => {
       if (filterWord !== undefined) {
         axios.get(GROUPS_SERVER_URL).then((results) => {
+          console.log(results.data.groups)
           const data2 = _.filter(results.data.groups, data => _.some(data.interests, { name: filterWord }))
+          console.log(data2)
           this.setState({ groups: data2, filterWords: filterWord })
         })
       } else if (localStorage.getItem('user_id')) {
         axios.get(GROUPS_SERVER_URL).then((results) => {
+          console.log(results.data.groups)
           const data2 = _.filter(results.data.groups, data => _.some(data.roles, { 'user_id': +(localStorage.getItem('user_id')) }))
           this.setState({ groups: data2 })
         })
       }
       else {
         axios.get(GROUPS_SERVER_URL).then((results) => {
+          console.log(results.data.groups)
           this.setState({ groups: results.data.groups })
         })
       }
@@ -38,13 +43,19 @@ class GroupsApi extends Component {
     fetchGroups()
   }
 
+ checkJoined = (x) => {
+   console.log(x.roles)
+   console.log(localStorage.getItem('user_id'))
+  return _.some(x.roles, (r) => { return r.user_id == localStorage.getItem('user_id') })
+ }
+
   render () {
     const { groups } = this.state
     return (
       <div className='groupscontainer2'>
         {this.state.filterWords !== undefined ? <h2 className='groupsinterestname'>{this.state.filterWords}</h2> : null}
         <div className='groupscontainer'>
-          {groups && groups.map((x) => <div className='groupsdiv'> <Link to={`/groups/${x.id}`} key={x.id} className='grouplink'>{x.name}</Link> <img src={x.image} className='groupimage' height="200" alt='Logo' /></div>)}
+          {groups && groups.map((x) => <div className='groupsdiv'>{this.checkJoined(x) ? <p>✔</p> : false}<Link to={`/groups/${x.id}`} key={x.id} className='grouplink'>{x.name}</Link> <img src={x.image} className='groupsimage' height="200" alt='Logo' /></div>)}
         </div>
       </div>
     )
@@ -52,3 +63,7 @@ class GroupsApi extends Component {
 }
 
 export default GroupsApi
+
+
+// if some =>group.roles.user_id ==  localstorage.getitem(userid)
+// 

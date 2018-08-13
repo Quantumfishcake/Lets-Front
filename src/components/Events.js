@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import url from 'url'
 import _ from 'lodash'
 import Calendar2 from './Calendar2'
+import helpers from './helpers'
 
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
@@ -42,7 +43,7 @@ class Events extends Component {
                   <h3>
                     <Link to={{ pathname: '/events/' + event.id }} >{event.name}</Link>
                   </h3>
-                  <p>date: {event.date}</p>
+                  <p>date: {helpers.convertdate(event.date)}</p>
                   <p>Description : {event.description}</p>
                 </div>
               )

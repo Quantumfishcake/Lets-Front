@@ -9,12 +9,10 @@ class Groups extends Component {
     return (
       <div >
         <Header />
-        <h1>Groups</h1>
         <GroupsApi search={this.props.location.search} />
         <div className='interestsgroupscontainer'>
           <h1>Categories</h1>
           <Interests />
-         
         </div>
         <Footer />
       </div>

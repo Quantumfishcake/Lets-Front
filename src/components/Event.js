@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const SERVER_URL = 'https://backend-lets.herokuapp.com/'
 
 class Event extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       event: {},
@@ -32,22 +32,30 @@ class Event extends Component {
     fetchEvent()
   }
 
-  render () {
-    const { event, group } = this.state
+  render() {
+    const { event, group, users } = this.state
     return (
       <div >
         <Header />
         <div className='eventcontainer'>
-          <h1>{group.name}</h1>
-          <h2>{event.name}</h2>
-          <img src={event.image} alt='Event Image' className='groupimage' />
-          <p>Date {event.date} at {event.time}</p>
-          <h4>At : {event.location}</h4>
-          <p> {this.state.users.length} {group.nickname}s going</p>
-          <hr />
+          <div>
+            <img src={event.image} alt='Event Image' className='eventimage' />
+          </div>
+          <div className='eventinfo'>
+            <h1>{group.name}</h1>
+            <h2>{event.name}</h2>
 
-          <p>Info : {event.description}</p>
-          <Link to={{ pathname: '/editevent/' + this.state.event_id }}>Edit Event</Link>
+            <p>Date {event.date} at {event.time}</p>
+            <h4>At : {event.location}</h4>
+            <p> {users.length} {group.nickname}s going</p>
+            <hr />
+
+            <p>Info : {event.description}</p>
+            <Link to={{ pathname: '/editevent/' + this.state.event_id }}>Edit Event</Link>
+          </div>
+          <div className='eventattendees'>
+          <h3>Attendees</h3>
+          </div>
         </div>
       </div>
     )

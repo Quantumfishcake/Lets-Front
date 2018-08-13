@@ -41,8 +41,7 @@ body {
 
 .navlist {
 	background-color: white;
-	height: 50px;
-	border-bottom: 1px solid #008596;
+	height: 100px;
 
   /*blocks are aligned using flex*/
 	display: flex;
@@ -80,7 +79,8 @@ body {
 }
 
 .navbar {
-  background-color: blue;
+
+  height: 100px;
 
 }
 
@@ -212,6 +212,18 @@ body {
   margin: 0 auto;
   background: linear-gradient(#004092, #020202, transparent)
 }
+.groupsdiv p{
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  background-color: black;
+}
+.groupsimage{
+  width: 100%;
+float: left;
+}
 
 .grouplink{
   position: absolute;
@@ -261,10 +273,10 @@ body {
   margin: 0 0 0 10px;
 
 }
-.groupimage{
+.eventimage{
   float:left;
   grid-column-start: 1;
-  max-width: 50vw;
+  max-width: 100%;
   grid-area: image;
   border-radius: 5px;
 }
@@ -292,6 +304,10 @@ body {
     overflow: hidden;
 
 }
+.groupimage{
+  max-width: 100%;
+}
+
 .groupnickname{
  grid-area: nickname;
  margin-left: 10px;
@@ -504,6 +520,14 @@ input[name="nicknames"] {
 .eventcontainer {
   max-width: 80vw;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.eventinfo{
+  margin: 0 0 0 10px;
+}
+.eventinfo h1{
+  margin: 0;
 }
 
 .containerevent {
