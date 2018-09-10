@@ -24,9 +24,14 @@ class Interests extends Component {
     return (
       <div className='categorycontainer'>
 
-        {interests && interests.interests && interests.interests.map((x) => <Link onClick={this.forceUpdate} to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}> <span className='card' style={{ 'display': 'block' }}>
-          <div className={x.name} /><span style={{ 'text-decoration': 'none' }} className='tile'>{x.name}</span>
-        </span></Link>)}
+        {interests && interests.interests && interests.interests.map((x) => {
+          return(
+            <Link className="interestName" onClick={this.forceUpdate} to={{ pathname: '/groups', search: `?filterBy=${x.name}` }}>
+                  <div className={x.name}>{x.name}</div>
+            </Link>
+          )
+        })}
+
 
       </div>
     )

@@ -98,105 +98,63 @@ body {
 .category{
   border: solid black 2px;
 }
-.card {
-  margin: 5px;
+
+.interestName {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+  font-size: 2.3vh;
+}
+
+.Yoga, .sports, .outdoors, .Tech, .Food, .Family, .Learning, .Health, .Photography, .Music, .Language {
+  height: 15vh;
+  width: 18vw;
+  background-size: 18vw 15vh;
+  border-radius: 5px;
+  margin: 1vw;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+
+  text-align: center;
+  line-height: 5vh;
 }
 
 .Yoga{
-  height: 150px;
-  width: 15vw;
   background-image: url('http://cdn.axar.az/2017/06/03/yoga.jpg');
-  background-size: 250px 150px;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-
 }
 .sports{
-  height: 150px;
-  width: 250px;
   background-image: url('https://vignette.wikia.nocookie.net/phobia/images/a/ab/Sports2.jpg/revision/latest?cb=20171106083857');
-  background-size: 250px 150px;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+
 }
 .outdoors{
-  height: 150px;
-  width: 250px;
   background-image: url('https://www.ashevillechamber.org/wp-content/uploads/2017/11/Play-Outdoors-Marquee.jpg');
-  background-size: 250px 150px;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Tech{
-  height: 150px;
-  width: 250px;
   background-image: url('https://www.visioncritical.com/wp-content/uploads/2015/12/tech-companies-resources-950x700.jpg');
-  background-size: 250px 150px;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-
 }
-.crosssing{
-  height: 150px;
-  width: 250px;
-  background-image: url('https://smhttp-ssl-71052.nexcesscdn.net/media/wysiwyg/learning-center/Crossdressing-Rights.jpg');
-  background-size: 250px 150px;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
-}
 .Food{
-  height: 150px;
-  width: 250px;
+
   background-image: url('http://cheersbar.com.au/wp-content/uploads/2016/01/CheersBar-Food-76.jpg');
-  background-size: 250px 150px;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Family{
-  height: 150px;
-  width: 250px;
+
   background-image: url('http://vanierinstitute.ca/wp-content/uploads/2016/05/Diversity-diversit%C3%A9.jpg');
-  background-size: 250px 150px;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
+
 .Learning{
-  height: 150px;
-  width: 250px;
+
   background-image: url('http://digitalassess.com/wp-content/uploads/2017/01/machine-learning-1.png');
-  background-size: 250px 150px;
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Health{
-  height: 150px;
-  width: 250px;
+
   background-image: url('https://i2.wp.com/news.harvard.edu/wp-content/uploads/2018/04/healthy-habits.jpg?resize=1200%2C800&ssl=1');
-  background-size: 250px 150px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
--moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .clicked{
@@ -204,39 +162,18 @@ box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 }
 
 .Photography{
-  height: 150px;
-  width: 250px;
+
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkeP_F1zRZZifmLfttZmTwyK7R6roEESyKRioPj6bgHY9-ZKUd');
-  background-size: 250px 150px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
--moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Music{
-  height: 150px;
-  width: 250px;
+
   background-image: url('https://www.apple.com/v/music/g/images/shared/og_image_family.png?201806181830');
-  background-size: 250px 150px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
--moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+
 
 }
-.Language{
-  height: 150px;
-  width: 250px;
+.Language {
   background-image: url('http://edtechreview.in/images/best-language-learning-apps.jpg');
-  background-size: 250px 150px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
--moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
-
-}
-
-.tile  {
-  text-decoration: none;
-  color: black;
 }
 
 .groupsdiv{
@@ -488,11 +425,9 @@ input[name="image"] {
  margin-left: 20px;
 
 }
-.react-calendar{
+.calendar{
    border: 3px solid grey;
-   position: absolute;
-   top: 152px;
-   left: 1071px;
+  margin: auto;
  }
 
 .creategroup {
@@ -582,10 +517,20 @@ input[name="nicknames"] {
   font-size: 20px;
 }
 
-.containersignin {
-  width: 1440px;
-  height: 600px;
+.mainSignIn {
+  width: 100vw;
+  height: 100vh;
   background-color: lightskyblue;
+  text-align: center;
+  padding: 3vh;
+}
+
+.mainSignIn li {
+  list-style-type: none;
+}
+
+.mainSignIn button {
+  margin: auto;
 }
 
 input[type="email"] {
@@ -602,53 +547,22 @@ input[type="password"] {
   width: 80vw;
   margin: 0 auto;
 }
-.containersignin li {
-  list-style-type: none;
-  font-weight: bolder;
-  margin-left: 400px;
-  }
-.containersignin ul {
-  padding-top: 60px;
-  padding-left: 200px;
-}
+
 
 button[name="create"]{
-  margin-left: 466px;
   padding: 15px;
 }
 
 button[name="signin"]{
-  margin-left: 456px;
   padding: 15px;
   color: white;
 }
 
-h5 {
-  padding-left: 400px;
-}
 
-.containersignup {
-  list-style-type: none;
-  width: 1440px;
-  height: 600px;
-  background-color: lightskyblue;
-}
-
-.containersignup ul {
-  padding-top: 60px;
-  padding-left: 200px;
-}
-
-.containersignup li {
-  list-style-type: none;
-  font-weight: bolder;
-  margin-left: 400px;
-  }
 button[name="signup"]{
-    margin-left: 456px;
     padding: 15px;
     color: white;
-    margin-top: 30px;
+    margin-top: 2vh;
   }
 
 .joinbutton{

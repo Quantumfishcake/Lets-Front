@@ -88,9 +88,9 @@ class SignUp extends Component {
     return (
       <div>
         <Header />
-        <div className="Signup">
+        <div className="mainSignIn">
           <h1>Sign Up</h1>
-          <div className="containersignup">
+          <div >
         <form onSubmit={this._handleSubmit}>
           <ul>
             <li><label>

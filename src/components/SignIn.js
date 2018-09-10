@@ -66,11 +66,11 @@ _handleEmailInput(e) {
 
   render() {
     return (
-      <div className="Signin">
+      <div >
         <Header />
-        <div className="mainsign">
+        <div className="mainSignIn">
           <h1>Sign In</h1>
-          <div className="containersignin">
+          <div className="">
         <form onSubmit={this._handleSubmit}>
           <ul>
             <li><label>
