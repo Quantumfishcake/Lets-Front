@@ -9,6 +9,7 @@ class Event extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      current_user: localStorage.getItem("username"),
       event: {},
       event_id: this.props.match.params.id,
       users: [],
@@ -51,7 +52,7 @@ class Event extends Component {
             <hr />
 
             <p>Info : {event.description}</p>
-            <Link to={{ pathname: '/editevent/' + this.state.event_id }}>Edit Event</Link>
+            {}<Link to={{ pathname: '/editevent/' + this.state.event_id }}>Edit Event</Link>
           </div>
           <div className='eventattendees'>
             <h3>Attendees</h3>

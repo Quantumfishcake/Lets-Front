@@ -7,12 +7,12 @@ const SERVER_URL = 'https://backend-lets.herokuapp.com/'
 const ENROLLMENT_SERVER_URL = 'https://backend-lets.herokuapp.com/enrollments.json'
 const EVENTSGET_SERVER_URL = 'https://backend-lets.herokuapp.com/events.json'
 
-
 class Newevent extends Component {
   constructor (props) {
     super(props)
     this.state = {
-
+      current_user: localStorage.getItem("username"),
+      group_users: [],
       event_id: 0,
       event: {
         group_id: props.history.location.state.group_id,
@@ -28,7 +28,6 @@ class Newevent extends Component {
       }
       
     }
-    console.log(props.history.location.state.group_id)
     this._handleNameInput = this._handleNameInput.bind(this)
     this._handleDateInput = this._handleDateInput.bind(this)
     this._handleTimeInput = this._handleTimeInput.bind(this)
@@ -38,6 +37,15 @@ class Newevent extends Component {
     this._handleImageInput = this._handleImageInput.bind(this)
     this._createEvent = this._createEvent.bind(this)
     axios.defaults.headers.common = { 'Authorization': 'Bearer ' + localStorage.getItem('jwt') }
+
+    const getGroupUsers = () => {
+      let url = SERVER_URL + 'groups/' + this.state.event.group_id + '.json'
+      axios.get(url).then( (results) => {
+        this.setState({group_users: results.data.users})
+      console.log(results);
+      })
+    }
+    getGroupUsers();
   }
 
   _handleNameInput(event) {
@@ -74,6 +82,9 @@ class Newevent extends Component {
     this.setState({ event: { ...this.state.event, image: event.target.value } })
   }
 
+//get all the users that are members of the group owning this event
+
+
 
   _createEvent (event) {
     event.preventDefault();
@@ -84,7 +95,7 @@ class Newevent extends Component {
         axios.post(ENROLLMENT_SERVER_URL, { user_id: this.state.user_id, event_id: (results.data.events.pop().id), moderator: false, admin: false, waitinglist: false, status: 1}).then((results) => {console.log(results)})
       })
       history.push({
-        pathname: '/groups'
+        pathname: '/events'
       })
     }).catch((errors) => {
       console.log('returned errors', errors)
