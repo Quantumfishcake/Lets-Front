@@ -25,7 +25,7 @@ class Nav extends Component {
         <img src={logo} width="250" height="100" className='logo' />
         <ul className='navlist'>
           <Link to={`/`} className='navlink'>Home</Link>
-          <Link to={`/groups`} onCLick={this.forceUpdate} className='navlink'>Groups</Link>
+          <Link to={`/groups`} onClick={this.forceUpdate} className='navlink'>Groups</Link>
           <Link to={`/events`} className='navlink'>Events</Link>
           {localStorage.getItem('jwt') == null ? false : <Link to={`/newgroup`} className='navlink'>New Group</Link>}
           {localStorage.getItem('jwt') == null ? false : <p>{localStorage.getItem('username')}</p>}

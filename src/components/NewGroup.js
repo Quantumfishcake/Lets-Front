@@ -20,17 +20,13 @@ class NewGroup extends Component {
   
 
   createNewGroup(group) {
-    console.log(this.state)
+
     localStorage.getItem('jwt') == null ? false : axios.post(GROUPS_SERVER_URL, { name: group.name, description: group.description, image: group.image, location: group.location, nickname: group.nickname, user_id: group.user_id }).then((results) => {
       axios.get(GROUPSGET_SERVER_URL).then((results) => {
-        console.log(results.data.groups.pop().id)
-        console.log(this.state.user_id)
         axios.post(ROLES_SERVER_URL, { user_id: this.state.user_id, group_id: (results.data.groups.pop().id)+1, admin: true}).then((results) => {console.log(results)})
       })
-      console.log(results)
       this.setState({ redirect: true })
     }).catch(function (error) {
-      console.log(error.response)
     })
   }
 

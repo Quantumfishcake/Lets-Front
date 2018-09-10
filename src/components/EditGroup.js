@@ -78,6 +78,7 @@ class EditGroup extends Component {
   }
 
   _addInterest(event) {
+    console.log(event)
     console.log(this.state.allInterests)
     const interest = _.filter(this.state.allInterests, { id: +(event.target.value) })
     console.log(interest)
@@ -126,7 +127,7 @@ class EditGroup extends Component {
             <input type='text' name='name' onChange={this.handleChange('nickname')} value={this.state.nickname} />
           </label></li><br></br>
           <div>
-          {this.state.allInterests.map((x) => <button type="button" className={btn_class} onClick={this._addInterest} value={x.id}>{x.name}</button>)}
+          {this.state.allInterests.map((x) => <MyButton click={this._addInterest} value={x.id} name={x.name} />)}
           </div>
           <input type='submit' value='Create' className='button' onClick={this._handleSubmit} />
           </ul>
@@ -138,3 +139,33 @@ class EditGroup extends Component {
 }
 
 export default EditGroup
+
+
+class MyButton extends Component {
+  constructor(props) {
+      super(props);
+      this.toggleClass = this.toggleClass.bind(this);
+      this.handleClick = this.handleClick.bind(this);
+      this.state = {
+          active: false,
+      };
+      console.log(this.props.value)
+  }
+  toggleClass() {
+      const currentState = this.state.active;
+      this.setState({ active: !currentState });
+  };
+
+  handleClick(){
+    this.toggleClass();
+    this.props.click()
+  }
+
+  render() {
+      return (
+          <div>
+              <button type="button" className={this.state.active ? 'clicked': null} onClick={this.handleClick} value={this.props.value}>{this.props.name}</button>
+          </div>
+      )
+}
+}

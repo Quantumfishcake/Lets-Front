@@ -106,7 +106,10 @@ body {
   width: 250px;
   background-image: url('http://cdn.axar.az/2017/06/03/yoga.jpg');
   background-size: 250px 150px;
-  border-radius: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .sports{
@@ -114,16 +117,20 @@ body {
   width: 250px;
   background-image: url('https://vignette.wikia.nocookie.net/phobia/images/a/ab/Sports2.jpg/revision/latest?cb=20171106083857');
   background-size: 250px 150px;
-  border-radius: 10px;
-
-  text-decoration: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 }
 .outdoors{
   height: 150px;
   width: 250px;
   background-image: url('https://www.ashevillechamber.org/wp-content/uploads/2017/11/Play-Outdoors-Marquee.jpg');
   background-size: 250px 150px;
-  border-radius: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Tech{
@@ -131,7 +138,10 @@ body {
   width: 250px;
   background-image: url('https://www.visioncritical.com/wp-content/uploads/2015/12/tech-companies-resources-950x700.jpg');
   background-size: 250px 150px;
-  border-radius: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .crosssing{
@@ -139,7 +149,10 @@ body {
   width: 250px;
   background-image: url('https://smhttp-ssl-71052.nexcesscdn.net/media/wysiwyg/learning-center/Crossdressing-Rights.jpg');
   background-size: 250px 150px;
-  border-radius: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Food{
@@ -147,7 +160,10 @@ body {
   width: 250px;
   background-image: url('http://cheersbar.com.au/wp-content/uploads/2016/01/CheersBar-Food-76.jpg');
   background-size: 250px 150px;
-  border-radius: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Family{
@@ -155,7 +171,10 @@ body {
   width: 250px;
   background-image: url('http://vanierinstitute.ca/wp-content/uploads/2016/05/Diversity-diversit%C3%A9.jpg');
   background-size: 250px 150px;
-  border-radius: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Learning{
@@ -163,7 +182,10 @@ body {
   width: 250px;
   background-image: url('http://digitalassess.com/wp-content/uploads/2017/01/machine-learning-1.png');
   background-size: 250px 150px;
-  border-radius: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Health{
@@ -171,15 +193,23 @@ body {
   width: 250px;
   background-image: url('https://i2.wp.com/news.harvard.edu/wp-content/uploads/2018/04/healthy-habits.jpg?resize=1200%2C800&ssl=1');
   background-size: 250px 150px;
-  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
+.clicked{
+  background-color: red;
+}
+
 .Photography{
   height: 150px;
   width: 250px;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkeP_F1zRZZifmLfttZmTwyK7R6roEESyKRioPj6bgHY9-ZKUd');
   background-size: 250px 150px;
-  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Music{
@@ -187,7 +217,9 @@ body {
   width: 250px;
   background-image: url('https://www.apple.com/v/music/g/images/shared/og_image_family.png?201806181830');
   background-size: 250px 150px;
-  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 .Language{
@@ -195,7 +227,9 @@ body {
   width: 250px;
   background-image: url('http://edtechreview.in/images/best-language-learning-apps.jpg');
   background-size: 250px 150px;
-  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.44);
 
 }
 

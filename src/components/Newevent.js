@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 import Header from './Header'
 import { history } from '../Routes'
 
 const SERVER_URL = 'https://backend-lets.herokuapp.com/'
-
+const ENROLLMENT_SERVER_URL = 'https://backend-lets.herokuapp.com/enrollments.json'
+const EVENTSGET_SERVER_URL = 'https://backend-lets.herokuapp.com/events.json'
 
 
 class Newevent extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
 
       event_id: 0,
@@ -23,8 +23,10 @@ class Newevent extends Component {
         time: '',
         date: '',
         capacity: 0,
-        redirect: false
+        redirect: false,
+        user_id: localStorage.getItem('user_id')
       }
+      
     }
     console.log(props.history.location.state.group_id)
     this._handleNameInput = this._handleNameInput.bind(this)
@@ -73,22 +75,23 @@ class Newevent extends Component {
   }
 
 
-  _createEvent(event) {
+  _createEvent (event) {
     event.preventDefault();
     console.log(this.state.event);
     localStorage.getItem('jwt') == null ? false : axios.post(SERVER_URL + 'events.json', { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('jwt') } }, { data: this.state.event }).then((response) => {
-      console.log(response);
+      axios.get(EVENTSGET_SERVER_URL).then((results) => {
+        console.log(this.state.event.user_id, results.data.events.pop().id)
+        axios.post(ENROLLMENT_SERVER_URL, { user_id: this.state.user_id, event_id: (results.data.events.pop().id), moderator: false, admin: false, waitinglist: false, status: 1}).then((results) => {console.log(results)})
+      })
       history.push({
         pathname: '/groups'
       })
     }).catch((errors) => {
       console.log('returned errors', errors)
     })
-
-
   }
 
-  render() {
+  render () {
     return (
       <div className='newevent'>
         <Header />

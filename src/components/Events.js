@@ -10,7 +10,7 @@ import helpers from './helpers'
 const SERVER_URL = "https://backend-lets.herokuapp.com/"
 
 class Events extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       events: []
@@ -21,8 +21,7 @@ class Events extends Component {
       })
     })
   }
-  render() {
-
+  render () {
     const { location } = this.props
     const { events } = this.state
     const date = url.parse(location.search, true).query.filterBy

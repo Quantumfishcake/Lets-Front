@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const SERVER_URL = 'https://backend-lets.herokuapp.com/'
 
 class Event extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       event: {},
@@ -32,7 +32,7 @@ class Event extends Component {
     fetchEvent()
   }
 
-  render() {
+  render () {
     const { event, group, users } = this.state
     return (
       <div >
@@ -54,7 +54,7 @@ class Event extends Component {
             <Link to={{ pathname: '/editevent/' + this.state.event_id }}>Edit Event</Link>
           </div>
           <div className='eventattendees'>
-          <h3>Attendees</h3>
+            <h3>Attendees</h3>
           </div>
         </div>
       </div>
